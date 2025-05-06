@@ -3,195 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GVMCGroups - Energy Services</title>
+    <title>GVMCGroups - Leading Energy Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
         html { scroll-behavior: smooth; }
-        body { font-family: 'Roboto', sans-serif; } /* Example custom font */
-        .section-padding { padding: 6rem 1.5rem; } /* Increased padding */
-        @media (min-width: 768px) { .section-padding { padding: 8rem 4rem; } } /* More padding on larger screens */
+        body { font-family: 'Poppins', sans-serif; } /* Using Poppins as an example */
+        .section-padding { padding: 6rem 1.5rem; }
+        @media (min-width: 768px) { .section-padding { padding: 8rem 4rem; } }
         .card {
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px); /* More pronounced lift */
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow */
         }
-         /* Style for active nav link (optional) */
-        .active-nav {
-            font-weight: bold;
-            text-decoration: underline;
+         /* Add a background pattern effect - requires a base64 encoded SVG or image */
+        .pattern-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm10 28a6 6 0 100-12 6 6 0 000 12zm10 0a6 6 0 100-12 6 6 0 000 12zm-8 6a8 8 0 100-16 8 8 0 000 16zM0 34v-4H2v4h4v2H2v4H0v-4zm0-30V0h2v4h4v2H2v4H0V6h4V4H0zm10 28a6 6 0 100-12 6 6 0 000 12zm10 0a6 6 0 100-12 6 6 0 000 12zm-8 6a8 8 0 100-16 8 8 0 000 16zM36 4v-4h-2v4h-4v2h4v4h2V6h4V4h-4zm10 28a6 6 0 100-12 6 6 0 000 12zm10 0a6 6 0 100-12 6 6 0 000 12zm-8 6a8 8 0 100-16 8 8 0 000 16zM0 4v-4H2v4h4v2H2v4H0V6h4V4H0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+             background-size: cover; /* Or adjust as needed */
         }
     </style>
 </head>
-<body class="font-sans bg-gray-50 text-gray-800">
+<body class="font-sans text-gray-800">
 
-    <nav class="bg-white p-4 text-gray-800 sticky top-0 z-50 shadow-md">
+    <nav class="bg-white p-4 text-gray-800 sticky top-0 z-50 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-blue-700">GVMCGroups <span class="text-green-600">Energy</span></a>
-            <div class="space-x-6 hidden md:flex items-center">
-                <a href="#home" class="hover:text-blue-600">Home</a>
-                <a href="#about" class="hover:text-blue-600">About Us</a>
-                <a href="#services" class="hover:text-blue-600">Services</a>
-                <a href="#projects" class="hover:text-blue-600">Projects</a>
-                <a href="#contact" class="hover:text-blue-600">Contact Us</a>
+            <a href="#" class="text-2xl md:text-3xl font-bold text-blue-800">GVMCGroups <span class="text-green-600">Energy</span></a>
+            <div class="space-x-8 hidden md:flex items-center text-lg">
+                <a href="#home" class="hover:text-green-600 transition duration-300">Home</a>
+                <a href="#about" class="hover:text-green-600 transition duration-300">About Us</a>
+                <a href="#services" class="hover:text-green-600 transition duration-300">Services</a>
+                <a href="#projects" class="hover:text-green-600 transition duration-300">Projects</a>
+                <a href="#contact" class="hover:text-green-600 transition duration-300">Contact</a>
             </div>
              <button id="mobile-menu-button" class="md:hidden focus:outline-none text-gray-800">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
-         <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-white mt-2 py-2 space-y-2 text-gray-800 shadow rounded">
-            <a href="#home" class="block px-4 py-2 hover:bg-gray-100">Home</a>
-            <a href="#about" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
-            <a href="#services" class="block px-4 py-2 hover:bg-gray-100">Services</a>
-            <a href="#projects" class="block px-4 py-2 hover:bg-gray-100">Projects</a>
-            <a href="#contact" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a>
+         <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-white mt-2 py-3 space-y-3 text-gray-800 shadow-lg rounded">
+            <a href="#home" class="block px-5 py-2 hover:bg-gray-100 transition duration-300">Home</a>
+            <a href="#about" class="block px-5 py-2 hover:bg-gray-100 transition duration-300">About Us</a>
+            <a href="#services" class="block px-5 py-2 hover:bg-gray-100 transition duration-300">Services</a>
+            <a href="#projects" class="block px-5 py-2 hover:bg-gray-100 transition duration-300">Projects</a>
+            <a href="#contact" class="block px-5 py-2 hover:bg-gray-100 transition duration-300">Contact</a>
         </div>
     </nav>
 
-    <section id="home" class="bg-gradient-to-br from-green-500 to-blue-600 text-white section-padding flex items-center justify-center min-h-screen bg-cover bg-center relative overflow-hidden">
-         <div class="absolute inset-0 bg-black opacity-30"></div>
+    <section id="home" class="bg-gradient-to-br from-green-600 to-blue-700 text-white section-padding flex items-center justify-center min-h-screen bg-cover bg-center relative overflow-hidden">
+         <div class="absolute inset-0 bg-black opacity-40"></div>
          <div class="container mx-auto text-center z-10">
-            <h1 class="text-6xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-lg">
-                Innovative <span class="text-orange-300">Energy</span> Solutions
+            <h1 class="text-6xl md:text-7xl lg:text-8xl font-extrabold mb-6 leading-tight drop-shadow-lg animate-fade-in-up">
+                Powering Progress <br class="hidden md:block"> with Sustainable Energy
             </h1>
-            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto drop-shadow">
-                GVMCGroups delivers sustainable and efficient energy services tailored for a brighter future.
+            <p class="text-xl md:text-2xl lg:text-3xl mb-10 max-w-4xl mx-auto drop-shadow animate-fade-in-up animation-delay-200">
+                GVMCGroups provides cutting-edge energy solutions for a cleaner, more efficient world.
             </p>
-            <a href="#services" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-10 rounded-full text-lg shadow-xl transform hover:scale-105 transition duration-300 ease-in-out border-2 border-orange-500 hover:border-orange-600">
-                Discover How We Can Help
+            <a href="#services" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-12 rounded-full text-lg md:text-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out border-2 border-orange-500 hover:border-orange-600 animate-fade-in-up animation-delay-400">
+                Explore Our Services
             </a>
         </div>
     </section>
 
     <section id="about" class="bg-gray-50 section-padding">
         <div class="container mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center text-blue-800 mb-12">About Us</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center text-blue-800 mb-14">Our Story & Vision</h2>
             <div class="flex flex-wrap items-center -mx-4">
-                <div class="w-full md:w-1/2 px-4 mb-8 md:mb-0">
-                    <img src="https://placehold.co/700x450/e0f2f7/0369a1?text=Our+Story" alt="About Us - GVMCGroups" class="rounded-lg shadow-lg w-full h-auto object-cover">
+                <div class="w-full md:w-1/2 px-4 mb-10 md:mb-0">
+                    <img src="https://placehold.co/700x450/d1fae5/065f46?text=Our+Team+or+Facility" alt="About Us - GVMCGroups" class="rounded-xl shadow-xl w-full h-auto object-cover border-4 border-green-500">
                 </div>
                 <div class="w-full md:w-1/2 px-4">
-                    <h3 class="text-3xl font-semibold text-green-700 mb-6">Leading the Way in Sustainable Energy</h3>
+                    <h3 class="text-3xl font-semibold text-green-700 mb-6">Innovation and Reliability in Energy</h3>
                     <p class="text-gray-700 text-lg leading-relaxed mb-6">
-                        [Insert a compelling paragraph about GVMCGroups' origins, mission, and commitment to the energy sector. Highlight your passion for sustainability and innovation.]
+                        [Tell the compelling story of GVMCGroups' journey in the energy sector. What inspired its creation? What problems do you solve?]
                     </p>
-                     <p class="text-gray-700 text-lg leading-relaxed">
-                        [Add another paragraph detailing your expertise, values, and what sets GVMCGroups apart in providing energy solutions. Mention your focus on client success.]
+                     <p class="text-gray-700 text-lg leading-relaxed border-l-4 border-blue-500 pl-4 italic">
+                        "[Share your company's core values or a powerful quote about your mission in providing energy solutions.]"
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed mt-6">
+                        [Describe your vision for the future of energy and how GVMCGroups is actively contributing to it through technology, expertise, and dedication.]
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="bg-blue-600 text-white section-padding">
+    <section id="services" class="bg-blue-700 text-white section-padding">
         <div class="container mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12">Our Energy Services</h2>
+            <h2 class="text-4xl md:text-5xl font-bold mb-14 text-white">Our Comprehensive Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg card">
-                    <img src="https://placehold.co/100x100/facc15/000?text=Solar+" alt="Solar Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
-                    <h3 class="text-2xl font-semibold text-orange-600 mb-4">Solar Solutions</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Expert design, installation, and maintenance of solar photovoltaic systems for homes, businesses, and utility-scale projects.
+                <div class="bg-white text-gray-800 p-8 rounded-xl shadow-xl card flex flex-col items-center">
+                    <img src="https://placehold.co/80x80/facc15/000?text=Solar+Icon" alt="Solar Icon" class="mb-6 w-20 h-20 object-contain">
+                    <h3 class="text-2xl font-semibold text-orange-600 mb-4">Solar PV Solutions</h3>
+                    <p class="text-gray-700 leading-relaxed text-center">
+                        From residential rooftops to large-scale solar farms, we design, install, and optimize photovoltaic systems for maximum energy yield.
                     </p>
                 </div>
-                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg card">
-                     <img src="https://placehold.co/100x100/3b82f6/000?text=Audit" alt="Audit Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
-                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Energy Auditing & Consulting</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Comprehensive analysis of energy usage to identify savings opportunities and develop efficient, sustainable energy strategies.
+                <div class="bg-white text-gray-800 p-8 rounded-xl shadow-xl card flex flex-col items-center">
+                     <img src="https://placehold.co/80x80/3b82f6/000?text=Consult+Icon" alt="Consulting Icon" class="mb-6 w-20 h-20 object-contain">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Energy Efficiency Audits</h3>
+                    <p class="text-gray-700 leading-relaxed text-center">
+                        Identify hidden energy waste and implement smart strategies to reduce consumption and lower operating costs for your facility.
                     </p>
                 </div>
-                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg card">
-                     <img src="https://placehold.co/100x100/10b981/000?text=Grid" alt="Grid Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
-                    <h3 class="text-2xl font-semibold text-green-700 mb-4">Grid Integration & Management</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Seamless integration of renewable energy sources into existing grids and advanced energy management solutions.
+                <div class="bg-white text-gray-800 p-8 rounded-xl shadow-xl card flex flex-col items-center">
+                     <img src="https://placehold.co/80x80/10b981/000?text=Battery+Icon" alt="Battery Icon" class="mb-6 w-20 h-20 object-contain">
+                    <h3 class="text-2xl font-semibold text-green-700 mb-4">Energy Storage Systems</h3>
+                    <p class="text-gray-700 leading-relaxed text-center">
+                        Install reliable battery storage solutions to ensure energy security, manage peak demand, and maximize renewable energy use.
                     </p>
                 </div>
                  </div>
         </div>
     </section>
 
-     <section id="projects" class="bg-gray-50 section-padding">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-12">Featured Projects</h2>
+     <section id="projects" class="bg-gray-100 section-padding pattern-bg"> <div class="container mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-14">Our Recent Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden card">
-                    <img src="https://placehold.co/600x400/a7f3d0/047857?text=Project+A" alt="Project Alpha" class="w-full h-60 object-cover">
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden card">
+                    <img src="https://placehold.co/600x400/a7f3d0/065f46?text=Project+Image+1" alt="Project 1" class="w-full h-56 md:h-64 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-green-700 mb-2">[Project Title 1]</h3>
-                        <p class="text-gray-700 leading-relaxed">[Brief description focusing on impact or scale, e.g., "Installing 1MW Solar Capacity for X Corporation."]</p>
+                        <p class="text-gray-700 leading-relaxed text-sm">[Brief description of the project, highlighting key achievements or scale.]</p>
+                         <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800 font-semibold text-sm">Learn More &rarr;</a>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden card">
-                    <img src="https://placehold.co/600x400/fed7aa/c2410c?text=Project+B" alt="Project Beta" class="w-full h-60 object-cover">
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden card">
+                    <img src="https://placehold.co/600x400/fed7aa/c2410c?text=Project+Image+2" alt="Project 2" class="w-full h-56 md:h-64 object-cover">
                      <div class="p-6">
                         <h3 class="text-2xl font-semibold text-orange-600 mb-2">[Project Title 2]</h3>
-                        <p class="text-gray-700 leading-relaxed">[Brief description, e.g., "Energy Efficiency Retrofit for Y Municipal Building."]</p>
+                        <p class="text-gray-700 leading-relaxed text-sm">[Brief description of the project, highlighting key achievements or scale.]</p>
+                         <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800 font-semibold text-sm">Learn More &rarr;</a>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden card">
-                    <img src="https://placehold.co/600x400/bfdbfe/1d4ed8?text=Project+C" alt="Project Gamma" class="w-full h-60 object-cover">
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden card">
+                     <img src="https://placehold.co/600x400/bfdbfe/1d4ed8?text=Project+Image+3" alt="Project 3" class="w-full h-56 md:h-64 object-cover">
                      <div class="p-6">
                         <h3 class="text-2xl font-semibold text-blue-700 mb-2">[Project Title 3]</h3>
-                        <p class="text-gray-700 leading-relaxed">[Brief description, e.g., "Developing a Microgrid Solution for Z Industrial Park."]</p>
+                        <p class="text-gray-700 leading-relaxed text-sm">[Brief description of the project, highlighting key achievements or scale.]</p>
+                        <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800 font-semibold text-sm">Learn More &rarr;</a>
                     </div>
                 </div>
                 </div>
-             <div class="mt-12">
-                 <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full text-lg shadow-xl transform hover:scale-105 transition duration-300 ease-in-out border-2 border-green-600 hover:border-green-700">
+             <div class="mt-16">
+                 <a href="#" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-12 rounded-full text-lg md:text-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out border-2 border-green-600 hover:border-green-700">
                     View All Projects
                  </a>
              </div>
         </div>
     </section>
 
-    <section id="contact" class="bg-green-700 text-white section-padding">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12">Get in Touch</h2>
-            <p class="text-xl mb-8">Let's discuss your energy needs. Contact GVMCGroups today.</p>
+    <section id="contact" class="bg-green-800 text-white section-padding"> <div class="container mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12">Get in Touch Today</h2>
+            <p class="text-xl md:text-2xl mb-10">Ready to discuss your energy needs? Contact GVMCGroups for a consultation.</p>
             <div class="flex justify-center">
-                <div class="w-full max-w-2xl bg-white text-gray-800 p-8 md:p-10 rounded-lg shadow-lg">
-                    <form action="YOUR_FORM_SUBMISSION_URL" method="POST"> <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="w-full max-w-3xl bg-white text-gray-800 p-8 md:p-12 rounded-xl shadow-xl">
+                    <form action="YOUR_FORM_SUBMISSION_URL" method="POST"> <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                             <div>
-                                <label for="name" class="block text-gray-700 text-sm font-semibold mb-2 text-left">Name:</label>
-                                <input type="text" id="name" name="name" class="shadow-sm appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                                <label for="name" class="block text-gray-700 text-lg font-semibold mb-2 text-left">Name:</label>
+                                <input type="text" id="name" name="name" class="shadow-sm appearance-none border border-gray-300 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-lg" required>
                             </div>
                             <div>
-                                <label for="email" class="block text-gray-700 text-sm font-semibold mb-2 text-left">Email:</label>
-                                <input type="email" id="email" name="email" class="shadow-sm appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                                <label for="email" class="block text-gray-700 text-lg font-semibold mb-2 text-left">Email:</label>
+                                <input type="email" id="email" name="email" class="shadow-sm appearance-none border border-gray-300 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-lg" required>
                             </div>
                         </div>
-                         <div class="mb-6 text-left">
-                            <label for="subject" class="block text-gray-700 text-sm font-semibold mb-2">Subject:</label>
-                            <input type="text" id="subject" name="subject" class="shadow-sm appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                         <div class="mb-8 text-left">
+                            <label for="subject" class="block text-gray-700 text-lg font-semibold mb-2">Subject:</label>
+                            <input type="text" id="subject" name="subject" class="shadow-sm appearance-none border border-gray-300 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-lg">
                         </div>
-                        <div class="mb-8 text-left">
-                            <label for="message" class="block text-gray-700 text-sm font-semibold mb-2">Message:</label>
-                            <textarea id="message" name="message" rows="6" class="shadow-sm appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required></textarea>
+                        <div class="mb-10 text-left">
+                            <label for="message" class="block text-gray-700 text-lg font-semibold mb-2">Message:</label>
+                            <textarea id="message" name="message" rows="6" class="shadow-sm appearance-none border border-gray-300 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-lg" required></textarea>
                         </div>
                         <div class="flex items-center justify-center">
-                            <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-10 rounded-full focus:outline-none focus:shadow-outline text-lg shadow-xl transform hover:scale-105 transition duration-300 ease-in-out border-2 border-orange-500 hover:border-orange-600">
+                            <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-12 rounded-full focus:outline-none focus:shadow-outline text-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out border-2 border-orange-500 hover:border-orange-600">
                                 Send Message
                             </button>
                         </div>
                     </form>
-                     <div class="mt-10 text-gray-800 text-left border-t pt-8 border-gray-200">
-                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Contact Information</h3>
-                        <p class="mb-3"><strong class="text-blue-700">Email:</strong> <a href="mailto:info@gvmcgroupsenergy.com" class="text-blue-600 hover:underline">[Your Email Address]</a></p>
-                        <p class="mb-3"><strong class="text-blue-700">Phone:</strong> <a href="tel:+1234567890" class="text-blue-600 hover:underline">[Your Phone Number]</a></p>
-                        <p><strong class="text-blue-700">Address:</strong> [Your Business Address]</p>
-                    </div>
+                     <div class="mt-12 text-gray-800 text-center border-t-2 pt-10 border-gray-200">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-6">Find Us</h3>
+                        <p class="mb-3 text-lg"><strong class="text-blue-700">Email:</strong> <a href="mailto:info@gvmcgroupsenergy.com" class="text-blue-600 hover:underline">[Your Email Address]</a></p>
+                        <p class="mb-3 text-lg"><strong class="text-blue-700">Phone:</strong> <a href="tel:+1234567890" class="text-blue-600 hover:underline">[Your Phone Number]</a></p>
+                        <p class="text-lg"><strong class="text-blue-700">Address:</strong> [Your Business Address]</p>
+                         </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-blue-800 text-white p-8 text-center">
-        <div class="container mx-auto">
+    <footer class="bg-blue-900 text-white p-8 text-center"> <div class="container mx-auto">
             <p>&copy; 2023 GVMCGroups Energy. All rights reserved.</p>
-            <p class="mt-4 text-sm">Crafted with <span class="text-red-500">&hearts;</span> using Tailwind CSS</p>
+            <p class="mt-4 text-sm text-gray-300">Website designed with <span class="text-red-400">&hearts;</span> using Tailwind CSS</p>
         </div>
     </footer>
 
@@ -200,14 +205,15 @@
         const menu = document.getElementById('mobile-menu');
         button.addEventListener('click', () => {
             menu.classList.toggle('hidden');
+            menu.classList.toggle('block'); // Use block to make it visible
         });
-         // Close menu when a link is clicked
+         // Close menu when a link is clicked (optional)
         menu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 menu.classList.add('hidden');
+                menu.classList.remove('block');
             });
         });
     </script>
-
-</body>
+    </body>
 </html>
