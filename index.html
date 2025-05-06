@@ -20,6 +20,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
             background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
             backdrop-filter: blur(5px); /* Frosted glass effect */
+            cursor: pointer; /* Indicate clickability */
         }
         .card:hover {
             transform: translateY(-8px); /* More pronounced lift */
@@ -41,10 +42,68 @@
             100% { background-position: 0% 50%; }
         }
 
-
          /* Subtle pattern background */
         .bg-pattern {
              background-image: url('data:image/svg+xml,%3Csvg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff" fill-opacity="0.05" fill-rule="evenodd"%3E%3Cpath d="M0 0h10v10H0zM2 0a2 2 0 0 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 0 1 0 4 2 2 0 0 1 0-4zM2 6a2 2 0 0 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 0 1 0 4 2 2 0 0 1 0-4z"%3E%3C/path%3E%3C/g%3E%3C/svg%3E');
+        }
+
+        /* Modal styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999; /* Above everything else */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        .modal.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: #1f2937; /* Dark background for modal */
+            color: #d1d5db; /* Light text */
+            padding: 2rem;
+            border-radius: 0.5rem;
+            max-width: 90%;
+            max-height: 90%;
+            overflow-y: auto; /* Allow scrolling if content is tall */
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .modal.open .modal-content {
+            transform: scale(1);
+        }
+
+        .close-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #9ca3af;
+            transition: color 0.2s ease-in-out;
+        }
+        .close-button:hover {
+            color: #e5e7eb;
+        }
+         /* Style for images inside modal content */
+        .modal-content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+            border-radius: 0.25rem;
         }
     </style>
 </head>
@@ -108,7 +167,7 @@
                      <p class="text-gray-300 text-lg leading-relaxed">
                         We offer end-to-end support from inception to handover, focusing on detailed engineering, vendor management, site management, and supply chain optimization to deliver higher value.
                     </p>
-                </div>
+                    </div>
             </div>
         </div>
     </section>
@@ -123,7 +182,7 @@
                     <p class="text-gray-300 leading-relaxed">
                         Providing expert consultancy, Project Management Unit (PMU) services, and business development strategies for energy projects.
                     </p>
-                </div>
+                    </div>
                 <div class="bg-gray-700 text-gray-200 p-8 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="200">
                      <img src="https://placehold.co/100x100/10b981/000?text=Execute" alt="Execution Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
                     <h3 class="text-2xl font-semibold text-green-500 mb-4">Project Implementation & Execution</h3>
@@ -190,28 +249,35 @@
         <div class="container mx-auto text-center">
             <h2 class="text-4xl md:text-5xl font-bold text-blue-500 mb-12" data-aos="fade-down">Our Project Showcase</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden card" data-aos="zoom-in-up" data-aos-delay="100">
+                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden card project-card" data-aos="zoom-in-up" data-aos-delay="100" data-project-id="led-lights">
                     <img src="https://placehold.co/600x400/1f2937/9ca3af?text=Project+1" alt="Project 1" class="w-full h-60 object-cover object-center">
                     <div class="p-6 text-left">
-                        <h3 class="text-2xl font-semibold text-green-500 mb-2">[Project Title 1]</h3>
-                        <p class="text-gray-300 leading-relaxed">[Brief description, e.g., "Installation of 4 Lakh LED Street Lights for Govt. PSU."]</p>
+                        <h3 class="text-2xl font-semibold text-green-500 mb-2">Installation of 4 Lakh LED Street Lights</h3>
+                        <p class="text-gray-300 leading-relaxed">Highlight: Government of India PSU project.</p>
                     </div>
                 </div>
-                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden card" data-aos="zoom-in-up" data-aos-delay="200">
+                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden card project-card" data-aos="zoom-in-up" data-aos-delay="200" data-project-id="solar-maharashtra">
                     <img src="https://placehold.co/600x400/1f2937/9ca3af?text=Project+2" alt="Project 2" class="w-full h-60 object-cover object-center">
                      <div class="p-6 text-left">
-                        <h3 class="text-2xl font-semibold text-orange-500 mb-2">[Project Title 2]</h3>
-                        <p class="text-gray-300 leading-relaxed">[Brief description, e.g., "Ground Mounted Solar Project in Maharashtra."]</p>
+                        <h3 class="text-2xl font-semibold text-orange-500 mb-2">Ground Mounted Solar Project</h3>
+                        <p class="text-gray-300 leading-relaxed">Highlight: Project executed in Maharashtra.</p>
                     </div>
                 </div>
-                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden card" data-aos="zoom-in-up" data-aos-delay="300">
+                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden card project-card" data-aos="zoom-in-up" data-aos-delay="300" data-project-id="smart-meters-up">
                     <img src="https://placehold.co/600x400/1f2937/9ca3af?text=Project+3" alt="Project 3" class="w-full h-60 object-cover object-center">
                      <div class="p-6 text-left">
-                        <h3 class="text-2xl font-semibold text-blue-500 mb-2">[Project Title 3]</h3>
-                        <p class="text-gray-300 leading-relaxed">[Brief description, e.g., "Smart Meter Installation Project in UP."]</p>
+                        <h3 class="text-2xl font-semibold text-blue-500 mb-2">Smart Meter Installation Project</h3>
+                        <p class="text-gray-300 leading-relaxed">Highlight: Project implemented in Uttar Pradesh.</p>
                     </div>
                 </div>
+                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden card project-card" data-aos="zoom-in-up" data-aos-delay="400" data-project-id="ev-consultancy-case">
+                    <img src="https://placehold.co/600x400/1f2937/9ca3af?text=EV+Consultancy" alt="EV Consultancy Project" class="w-full h-60 object-cover object-center">
+                     <div class="p-6 text-left">
+                        <h3 class="text-2xl font-semibold text-purple-400 mb-2">EV Charging Infrastructure Consultancy</h3>
+                        <p class="text-gray-300 leading-relaxed">Highlight: Strategic planning for EV industry client.</p>
+                    </div>
                 </div>
+            </div>
              <div class="mt-14" data-aos="fade-up">
                  <a href="#" class="inline-block bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-10 rounded-full text-lg shadow-xl transform hover:scale-105 transition duration-300 ease-in-out border-2 border-green-600 hover:border-green-500">
                     View More Projects
@@ -268,27 +334,152 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <div id="projectModal" class="modal hidden">
+        <div class="modal-content">
+             <span class="close-button">&times;</span>
+            <div id="modalContentBody">
+                </div>
+        </div>
+    </div>
+    <div id="project-details-container" class="hidden">
+
+        <div id="led-lights">
+            <h3 class="text-3xl font-bold text-green-500 mb-4">Installation of 4 Lakh LED Street Lights</h3>
+            <img src="https://placehold.co/800x500/1f2937/9ca3af?text=LED+Project+Image" alt="LED Street Lights Project" class="mb-4">
+            <p class="text-gray-300 mb-4">
+                Detailed description of the LED Street Lights project executed for a Government of India PSU.
+                Include details about the scope, scale (4 Lakh lights), technology used, challenges overcome,
+                and the positive impact (energy savings, improved public lighting).
+            </p>
+            <p class="text-gray-400 text-sm">Location: [Mention State/Area if applicable]</p>
+            <p class="text-gray-400 text-sm">Client: Government of India PSU</p>
+             </div>
+
+        <div id="solar-maharashtra">
+            <h3 class="text-3xl font-bold text-orange-500 mb-4">Ground Mounted Solar Project in Maharashtra</h3>
+             <img src="https://placehold.co/800x500/1f2937/9ca3af?text=Solar+Project+Image" alt="Maharashtra Solar Project" class="mb-4">
+            <p class="text-gray-300 mb-4">
+                Detailed description of the Ground Mounted Solar project in Maharashtra.
+                Explain the capacity (e.g., MW), technology (panel type, inverters), construction process,
+                and its contribution to renewable energy generation.
+            </p>
+            <p class="text-gray-400 text-sm">Location: Maharashtra</p>
+            <p class="text-gray-400 text-sm">Capacity: [Mention MW]</p>
+             </div>
+
+        <div id="smart-meters-up">
+            <h3 class="text-3xl font-bold text-blue-500 mb-4">Smart Meter Installation Project in Uttar Pradesh</h3>
+             <img src="https://placehold.co/800x500/1f2937/9ca3af?text=Smart+Meter+Image" alt="UP Smart Meter Project" class="mb-4">
+            <p class="text-gray-300 mb-4">
+                Detailed description of the Smart Meter installation project in Uttar Pradesh.
+                Discuss the scope (number of meters), benefits of smart metering (accurate billing, grid management),
+                and the logistics of large-scale deployment.
+            </p>
+            <p class="text-gray-400 text-sm">Location: Uttar Pradesh</p>
+            <p class="text-gray-400 text-sm">Number of Meters: [Mention count]</p>
+             </div>
+
+         <div id="ev-consultancy-case">
+            <h3 class="text-3xl font-bold text-purple-400 mb-4">EV Charging Infrastructure Consultancy Case Study</h3>
+             <img src="https://placehold.co/800x500/1f2937/9ca3af?text=EV+Consultancy+Image" alt="EV Consultancy Case Study" class="mb-4">
+            <p class="text-gray-300 mb-4">
+                Detailed description of an EV charging infrastructure consultancy project.
+                Outline the client's challenge, SVMC's approach (assessment, strategic planning),
+                recommendations provided (site selection, technology, business models), and the outcome.
+            </p>
+            <p class="text-gray-400 text-sm">Service Type: Consultancy</p>
+            <p class="text-gray-400 text-sm">Focus Area: EV Charging Infrastructure</p>
+             </div>
+
+
+        </div>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
             duration: 1200, // Animation duration in ms
             once: true, // Whether animation should happen only once - while scrolling down
             easing: 'ease-in-out', // Easing function
-            delay: 100, // Default delay
+            delay: 100, // Default delay for elements without individual delay
         });
 
         // Simple JS for Mobile Menu Toggle
-        const button = document.getElementById('mobile-menu-button');
-        const menu = document.getElementById('mobile-menu');
-        button.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
          // Close menu when a link is clicked
-        menu.querySelectorAll('a').forEach(link => {
+        mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                menu.classList.add('hidden'); // Hide menu after clicking
+                mobileMenu.classList.add('hidden'); // Hide menu after clicking
             });
         });
+
+        // ========================= MODAL JS =========================
+        const projectModal = document.getElementById('projectModal');
+        const modalContentBody = document.getElementById('modalContentBody');
+        const closeButton = projectModal.querySelector('.close-button');
+        const projectCards = document.querySelectorAll('.project-card'); // Select all elements with the class 'project-card'
+        const projectDetailsContainer = document.getElementById('project-details-container');
+
+        // Function to open the modal
+        function openModal(projectId) {
+            const projectDetailContent = projectDetailsContainer.querySelector(`#${projectId}`);
+            if (projectDetailContent) {
+                modalContentBody.innerHTML = projectDetailContent.innerHTML; // Copy content
+                projectModal.classList.add('open'); // Show modal
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            projectModal.classList.remove('open'); // Hide modal
+            document.body.style.overflow = ''; // Re-enable background scrolling
+             modalContentBody.innerHTML = ''; // Clear modal content
+        }
+
+        // Add click event listeners to project cards
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const projectId = card.getAttribute('data-project-id');
+                if (projectId) {
+                    openModal(projectId);
+                }
+            });
+        });
+
+        // Add click event listener to the close button
+        closeButton.addEventListener('click', closeModal);
+
+        // Add click event listener to the modal overlay
+        projectModal.addEventListener('click', (event) => {
+            // If clicked directly on the overlay (not the modal content)
+            if (event.target === projectModal) {
+                closeModal();
+            }
+        });
+
+         // Close modal with Escape key
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && projectModal.classList.contains('open')) {
+                closeModal();
+            }
+        });
+        // ======================= END MODAL JS =======================
+
+
+         // Optional: JS for 'Read More' in About section if you uncommented the button
+         // const readMoreButton = document.getElementById('read-more-about'); // Give your button this ID
+         // const moreAboutText = document.getElementById('more-about-text'); // Wrap extra text in a div with this ID
+         // if (readMoreButton && moreAboutText) {
+         //     moreAboutText.classList.add('hidden'); // Hide by default
+         //     readMoreButton.addEventListener('click', () => {
+         //         moreAboutText.classList.toggle('hidden');
+         //         readMoreButton.textContent = moreAboutText.classList.contains('hidden') ? 'Read More' : 'Read Less';
+         //     });
+         // }
+
     </script>
 
 </body>
