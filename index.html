@@ -7,56 +7,77 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         html { scroll-behavior: smooth; }
-        .section-padding { padding: 4rem 1rem; }
-        @media (min-width: 768px) { .section-padding { padding: 6rem 4rem; } }
+        body { font-family: 'Roboto', sans-serif; } /* Example custom font */
+        .section-padding { padding: 6rem 1.5rem; } /* Increased padding */
+        @media (min-width: 768px) { .section-padding { padding: 8rem 4rem; } } /* More padding on larger screens */
+        .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+         /* Style for active nav link (optional) */
+        .active-nav {
+            font-weight: bold;
+            text-decoration: underline;
+        }
     </style>
 </head>
-<body class="font-sans bg-gray-100 text-gray-800">
+<body class="font-sans bg-gray-50 text-gray-800">
 
-    <nav class="bg-blue-700 p-4 text-white sticky top-0 z-50 shadow-md">
+    <nav class="bg-white p-4 text-gray-800 sticky top-0 z-50 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold">GVMCGroups Energy</a>
-            <div class="space-x-4 hidden md:block"> <a href="#home" class="hover:underline">Home</a>
-                <a href="#about" class="hover:underline">About Us</a>
-                <a href="#services" class="hover:underline">Services</a>
-                <a href="#projects" class="hover:underline">Projects</a>
-                <a href="#contact" class="hover:underline">Contact Us</a>
+            <a href="#" class="text-2xl font-bold text-blue-700">GVMCGroups <span class="text-green-600">Energy</span></a>
+            <div class="space-x-6 hidden md:flex items-center">
+                <a href="#home" class="hover:text-blue-600">Home</a>
+                <a href="#about" class="hover:text-blue-600">About Us</a>
+                <a href="#services" class="hover:text-blue-600">Services</a>
+                <a href="#projects" class="hover:text-blue-600">Projects</a>
+                <a href="#contact" class="hover:text-blue-600">Contact Us</a>
             </div>
-             <button class="md:hidden focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+             <button id="mobile-menu-button" class="md:hidden focus:outline-none text-gray-800">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
-         <div class="mobile-menu hidden md:hidden mt-2 space-y-2">
-            <a href="#home" class="block px-2 py-1 hover:bg-blue-600 rounded">Home</a>
-            <a href="#about" class="block px-2 py-1 hover:bg-blue-600 rounded">About Us</a>
-            <a href="#services" class="block px-2 py-1 hover:bg-blue-600 rounded">Services</a>
-            <a href="#projects" class="block px-2 py-1 hover:bg-blue-600 rounded">Projects</a>
-            <a href="#contact" class="block px-2 py-1 hover:bg-blue-600 rounded">Contact Us</a>
+         <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-white mt-2 py-2 space-y-2 text-gray-800 shadow rounded">
+            <a href="#home" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+            <a href="#about" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
+            <a href="#services" class="block px-4 py-2 hover:bg-gray-100">Services</a>
+            <a href="#projects" class="block px-4 py-2 hover:bg-gray-100">Projects</a>
+            <a href="#contact" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a>
         </div>
     </nav>
 
-    <section id="home" class="bg-gradient-to-r from-green-600 to-blue-600 text-white section-padding flex items-center justify-center min-h-screen bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/10b981/ffffff?text=Energy+Solutions+Background')">
-        <div class="text-center bg-black bg-opacity-50 p-8 rounded-lg">
-            <h1 class="text-5xl md:text-6xl font-bold mb-4 drop-shadow">Powering the Future with GVMCGroups</h1>
-            <p class="text-xl md:text-2xl mb-8 drop-shadow">Sustainable and Reliable Energy Services for Your Needs.</p>
-            <a href="#services" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transition duration-300 ease-in-out">Explore Our Services</a>
+    <section id="home" class="bg-gradient-to-br from-green-500 to-blue-600 text-white section-padding flex items-center justify-center min-h-screen bg-cover bg-center relative overflow-hidden">
+         <div class="absolute inset-0 bg-black opacity-30"></div>
+         <div class="container mx-auto text-center z-10">
+            <h1 class="text-6xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-lg">
+                Innovative <span class="text-orange-300">Energy</span> Solutions
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto drop-shadow">
+                GVMCGroups delivers sustainable and efficient energy services tailored for a brighter future.
+            </p>
+            <a href="#services" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-10 rounded-full text-lg shadow-xl transform hover:scale-105 transition duration-300 ease-in-out border-2 border-orange-500 hover:border-orange-600">
+                Discover How We Can Help
+            </a>
         </div>
     </section>
 
-    <section id="about" class="bg-white section-padding">
+    <section id="about" class="bg-gray-50 section-padding">
         <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center text-blue-800 mb-10">About GVMCGroups Energy</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center text-blue-800 mb-12">About Us</h2>
             <div class="flex flex-wrap items-center -mx-4">
                 <div class="w-full md:w-1/2 px-4 mb-8 md:mb-0">
-                    <img src="https://placehold.co/600x400/047857/ffffff?text=About+Image+GVMC" alt="About Us - GVMCGroups" class="rounded-lg shadow-lg">
+                    <img src="https://placehold.co/700x450/e0f2f7/0369a1?text=Our+Story" alt="About Us - GVMCGroups" class="rounded-lg shadow-lg w-full h-auto object-cover">
                 </div>
                 <div class="w-full md:w-1/2 px-4">
-                    <h3 class="text-3xl font-semibold text-green-700 mb-4">Our Commitment to Sustainable Energy</h3>
-                    <p class="text-gray-700 text-lg leading-relaxed mb-4">
-                        GVMCGroups is dedicated to providing innovative and sustainable energy solutions. With a focus on renewable sources and energy efficiency, we help businesses and communities achieve their energy goals while contributing to a cleaner planet.
+                    <h3 class="text-3xl font-semibold text-green-700 mb-6">Leading the Way in Sustainable Energy</h3>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        [Insert a compelling paragraph about GVMCGroups' origins, mission, and commitment to the energy sector. Highlight your passion for sustainability and innovation.]
                     </p>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                       [Insert more details about GVMCGroups' history, mission, values, and expertise in the energy sector. Talk about your team and vision.]
+                     <p class="text-gray-700 text-lg leading-relaxed">
+                        [Add another paragraph detailing your expertise, values, and what sets GVMCGroups apart in providing energy solutions. Mention your focus on client success.]
                     </p>
                 </div>
             </div>
@@ -65,114 +86,128 @@
 
     <section id="services" class="bg-blue-600 text-white section-padding">
         <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-10">Our Energy Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white text-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-                    <img src="https://placehold.co/100x100/facc15/000?text=Solar" alt="Solar Icon" class="mx-auto mb-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12">Our Energy Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg card">
+                    <img src="https://placehold.co/100x100/facc15/000?text=Solar+" alt="Solar Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
                     <h3 class="text-2xl font-semibold text-orange-600 mb-4">Solar Solutions</h3>
-                    <p>Comprehensive solar energy systems for residential, commercial, and industrial needs. Design, installation, and maintenance.</p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Expert design, installation, and maintenance of solar photovoltaic systems for homes, businesses, and utility-scale projects.
+                    </p>
                 </div>
-                <div class="bg-white text-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-                     <img src="https://placehold.co/100x100/3b82f6/000?text=Consult" alt="Consulting Icon" class="mx-auto mb-4">
-                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Energy Consulting</h3>
-                    <p>Expert analysis and strategies to optimize energy consumption and implement cost-effective, sustainable practices.</p>
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg card">
+                     <img src="https://placehold.co/100x100/3b82f6/000?text=Audit" alt="Audit Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Energy Auditing & Consulting</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Comprehensive analysis of energy usage to identify savings opportunities and develop efficient, sustainable energy strategies.
+                    </p>
                 </div>
-                <div class="bg-white text-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-                     <img src="https://placehold.co/100x100/10b981/000?text=O%26M" alt="O&M Icon" class="mx-auto mb-4">
-                    <h3 class="text-2xl font-semibold text-green-700 mb-4">Operations & Maintenance</h3>
-                    <p>Ensuring peak performance and longevity of your energy systems with our professional O&M services.</p>
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg card">
+                     <img src="https://placehold.co/100x100/10b981/000?text=Grid" alt="Grid Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
+                    <h3 class="text-2xl font-semibold text-green-700 mb-4">Grid Integration & Management</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Seamless integration of renewable energy sources into existing grids and advanced energy management solutions.
+                    </p>
                 </div>
                  </div>
         </div>
     </section>
 
-     <section class="bg-gray-100 section-padding">
+     <section id="projects" class="bg-gray-50 section-padding">
         <div class="container mx-auto text-center">
-             <h2 class="text-4xl font-bold text-center text-green-800 mb-10">Why Choose GVMCGroups?</h2>
-             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                 <div class="p-6 rounded-lg shadow-lg bg-white">
-                     <h3 class="text-2xl font-semibold text-blue-600 mb-3">Expertise</h3>
-                     <p class="text-gray-700">Years of experience in the energy sector with a skilled team.</p>
-                 </div>
-                 <div class="p-6 rounded-lg shadow-lg bg-white">
-                    <h3 class="text-2xl font-semibold text-orange-600 mb-3">Innovation</h3>
-                    <p class="text-gray-700">Utilizing the latest technologies for efficient solutions.</p>
+            <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-12">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card">
+                    <img src="https://placehold.co/600x400/a7f3d0/047857?text=Project+A" alt="Project Alpha" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-green-700 mb-2">[Project Title 1]</h3>
+                        <p class="text-gray-700 leading-relaxed">[Brief description focusing on impact or scale, e.g., "Installing 1MW Solar Capacity for X Corporation."]</p>
+                    </div>
                 </div>
-                <div class="p-6 rounded-lg shadow-lg bg-white">
-                    <h3 class="text-2xl font-semibold text-green-600 mb-3">Sustainability</h3>
-                    <p class="text-gray-700">Committed to eco-friendly practices and renewable energy.</p>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card">
+                    <img src="https://placehold.co/600x400/fed7aa/c2410c?text=Project+B" alt="Project Beta" class="w-full h-60 object-cover">
+                     <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-orange-600 mb-2">[Project Title 2]</h3>
+                        <p class="text-gray-700 leading-relaxed">[Brief description, e.g., "Energy Efficiency Retrofit for Y Municipal Building."]</p>
+                    </div>
                 </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card">
+                    <img src="https://placehold.co/600x400/bfdbfe/1d4ed8?text=Project+C" alt="Project Gamma" class="w-full h-60 object-cover">
+                     <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-2">[Project Title 3]</h3>
+                        <p class="text-gray-700 leading-relaxed">[Brief description, e.g., "Developing a Microgrid Solution for Z Industrial Park."]</p>
+                    </div>
+                </div>
+                </div>
+             <div class="mt-12">
+                 <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full text-lg shadow-xl transform hover:scale-105 transition duration-300 ease-in-out border-2 border-green-600 hover:border-green-700">
+                    View All Projects
+                 </a>
              </div>
-        </div>
-     </section>
-
-    <section id="projects" class="bg-white section-padding">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold text-blue-800 mb-10">Our Energy Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-                    <img src="https://placehold.co/400x300/10b981/ffffff?text=Project+Alpha" alt="Project Alpha" class="rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold text-green-700 mb-2">Project Title 1: [Solar Farm]</h3>
-                    <p class="text-gray-700">[Brief description of the project, e.g., 5MW Solar Farm installation in X location.]</p>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-                    <img src="https://placehold.co/400x300/f97316/ffffff?text=Project+Beta" alt="Project Beta" class="rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold text-orange-600 mb-2">Project Title 2: [Commercial Rooftop]</h3>
-                    <p class="text-gray-700">[Brief description, e.g., Rooftop solar for Y company, reducing energy costs by Z%.]</p>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-                    <img src="https://placehold.co/400x300/2563eb/ffffff?text=Project+Gamma" alt="Project Gamma" class="rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold text-blue-700 mb-2">Project Title 3: [Energy Audit & Upgrade]</h3>
-                    <p class="text-gray-700">[Brief description, e.g., Energy efficiency upgrades for Z facility, resulting in A% savings.]</p>
-                </div>
-                </div>
         </div>
     </section>
 
     <section id="contact" class="bg-green-700 text-white section-padding">
         <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8">Get in Touch with GVMCGroups Energy</h2>
-            <p class="text-lg mb-8">Have questions or need a consultation? Contact us today!</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-12">Get in Touch</h2>
+            <p class="text-xl mb-8">Let's discuss your energy needs. Contact GVMCGroups today.</p>
             <div class="flex justify-center">
-                <div class="w-full max-w-lg bg-white text-gray-800 p-8 rounded-lg shadow-lg">
-                    <form action="YOUR_FORM_SUBMISSION_URL" method="POST"> <div class="mb-5 text-left">
-                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
-                            <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <div class="w-full max-w-2xl bg-white text-gray-800 p-8 md:p-10 rounded-lg shadow-lg">
+                    <form action="YOUR_FORM_SUBMISSION_URL" method="POST"> <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 text-sm font-semibold mb-2 text-left">Name:</label>
+                                <input type="text" id="name" name="name" class="shadow-sm appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 text-sm font-semibold mb-2 text-left">Email:</label>
+                                <input type="email" id="email" name="email" class="shadow-sm appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
                         </div>
-                        <div class="mb-5 text-left">
-                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
-                            <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                         <div class="mb-6 text-left">
+                            <label for="subject" class="block text-gray-700 text-sm font-semibold mb-2">Subject:</label>
+                            <input type="text" id="subject" name="subject" class="shadow-sm appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                         </div>
-                         <div class="mb-5 text-left">
-                            <label for="subject" class="block text-gray-700 text-sm font-bold mb-2">Subject:</label>
-                            <input type="text" id="subject" name="subject" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                        </div>
-                        <div class="mb-6 text-left">
-                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message:</label>
-                            <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
+                        <div class="mb-8 text-left">
+                            <label for="message" class="block text-gray-700 text-sm font-semibold mb-2">Message:</label>
+                            <textarea id="message" name="message" rows="6" class="shadow-sm appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required></textarea>
                         </div>
                         <div class="flex items-center justify-center">
-                            <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out">
+                            <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-10 rounded-full focus:outline-none focus:shadow-outline text-lg shadow-xl transform hover:scale-105 transition duration-300 ease-in-out border-2 border-orange-500 hover:border-orange-600">
                                 Send Message
                             </button>
                         </div>
                     </form>
-                    <div class="mt-8 text-gray-800">
-                        <p class="mb-2"><strong class="text-blue-700">Email:</strong> <a href="mailto:info@gvmcgroupsenergy.com" class="text-blue-600 hover:underline">[Your Email Address]</a></p>
-                        <p class="mb-2"><strong class="text-blue-700">Phone:</strong> <a href="tel:+1234567890" class="text-blue-600 hover:underline">[Your Phone Number]</a></p>
-                        <p class="mb-2"><strong class="text-blue-700">Address:</strong> [Your Business Address]</p>
+                     <div class="mt-10 text-gray-800 text-left border-t pt-8 border-gray-200">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Contact Information</h3>
+                        <p class="mb-3"><strong class="text-blue-700">Email:</strong> <a href="mailto:info@gvmcgroupsenergy.com" class="text-blue-600 hover:underline">[Your Email Address]</a></p>
+                        <p class="mb-3"><strong class="text-blue-700">Phone:</strong> <a href="tel:+1234567890" class="text-blue-600 hover:underline">[Your Phone Number]</a></p>
+                        <p><strong class="text-blue-700">Address:</strong> [Your Business Address]</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-blue-800 text-white p-6 text-center">
+    <footer class="bg-blue-800 text-white p-8 text-center">
         <div class="container mx-auto">
             <p>&copy; 2023 GVMCGroups Energy. All rights reserved.</p>
-            <p class="mt-2 text-sm">Designed with <span class="text-red-500">&hearts;</span> using Tailwind CSS</p>
+            <p class="mt-4 text-sm">Crafted with <span class="text-red-500">&hearts;</span> using Tailwind CSS</p>
         </div>
     </footer>
+
+    <script>
+        const button = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        button.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+         // Close menu when a link is clicked
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
 
 </body>
 </html>
