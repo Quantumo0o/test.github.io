@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Solar Energy Solutions</title>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .bg-gradient-primary {
+            background: linear-gradient(to right, #86ef7d, #22c55e);
+        }
+        .bg-gradient-secondary {
+             background: linear-gradient(to right, #f97316, #ea580c);
+        }
+        .bg-gradient-tertiary{
+            background: linear-gradient(to right, #3b82f6, #1d4ed8);
+        }
+        .text-shadow-md {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .drop-shadow-lg {
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .card {
+            background-color: rgba(255, 255, 255, 0.1);
+             backdrop-filter: blur(10px);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glassmorphism {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+        }
+        .dark .glassmorphism{
+             background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900">
+    <header class="bg-gradient-primary text-white py-4 md:py-6">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="/" class="flex items-center text-xl md:text-2xl font-semibold font-montserrat">
+                 <img src="https://placehold.co/50x50/EEE/31343C" alt="Company Logo" class="mr-2 rounded-full">
+                <span class="text-shadow-md">Slnko Energy</span>
+            </a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-4 font-montserrat">
+                    <li><a href="/" class="hover:text-gray-200 transition duration-300">Home</a></li>
+                    <li><a href="/about.html" class="hover:text-gray-200 transition duration-300">About Us</a></li>
+                    <li><a href="/services.html" class="hover:text-gray-200 transition duration-300">Services</a></li>
+                    <li><a href="/projects.html" class="hover:text-gray-200 transition duration-300">Projects</a></li>
+                    <li><a href="/contact.html" class="hover:text-gray-200 transition duration-300">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="hamburger-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle Navigation">
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
+        <div class="bg-gray-800 w-80 h-full absolute right-0 p-6">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu-btn" class="text-white focus:outline-none" aria-label="Close Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="block font-montserrat">
+                <ul class="space-y-4">
+                    <li><a href="/" class="block text-lg text-white hover:text-gray-200 transition duration-300">Home</a></li>
+                    <li><a href="/about.html" class="block text-lg text-white hover:text-gray-200 transition duration-300">About Us</a></li>
+                    <li><a href="/services.html" class="block text-lg text-white hover:text-gray-200 transition duration-300">Services</a></li>
+                    <li><a href="/projects.html" class="block text-lg text-white hover:text-gray-200 transition duration-300">Projects</a></li>
+                    <li><a href="/contact.html" class="block text-lg text-white hover:text-gray-200 transition duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="contact" class="bg-gradient-primary text-white rounded-lg py-12 md:py-16 px-4 md:px-8 text-center parallax" data-aos="fade-in" data-aos-duration="1000">
+            <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-shadow-md font-montserrat drop-shadow-lg">Contact Us</h2>
+            <p class="text-lg mb-8 text-gray-100 max-w-3xl mx-auto drop-shadow-lg">
+                Get in touch with us today to learn more about our solar energy solutions and how we can help you
+                save money and reduce your carbon footprint.
+            </p>
+            <a href="mailto:info@example.com" class="bg-white text-green-600 py-3 px-6 rounded-full font-semibold text-lg hover:bg-gray-100 transition duration-300 font-montserrat">
+                info@example.com
+            </a>
+        </section>
+    </main>
+
+    <footer class="bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 py-4">
+        <div class="container mx-auto px-4 text-center font-montserrat">
+            <p>&copy; 2024 Slnko Energy. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+       const hamburgerBtn = document.getElementById("hamburger-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeMenuBtn = document.getElementById("close-menu-btn");
+        const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+         const navLinks = document.querySelectorAll('header nav a');
+        const sections = document.querySelectorAll('section');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle("hidden");
+        }
+
+        hamburgerBtn.addEventListener("click", toggleMobileMenu);
+        closeMenuBtn.addEventListener("click", toggleMobileMenu);
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener("click", toggleMobileMenu);
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && event.target !== hamburgerBtn) {
+                toggleMobileMenu();
+            }
+        });
+
+        function updateActiveNavLink() {
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavLink);
+
+        AOS.init();
+    </script>
+</body>
+</html>
