@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SVMC Energy & Smart Infra - Innovative Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
@@ -20,7 +23,6 @@
             border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
             background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
             backdrop-filter: blur(5px); /* Frosted glass effect */
-            cursor: pointer; /* Indicate clickability */
         }
         .card:hover {
             transform: translateY(-8px); /* More pronounced lift */
@@ -42,68 +44,33 @@
             100% { background-position: 0% 50%; }
         }
 
+
          /* Subtle pattern background */
         .bg-pattern {
              background-image: url('data:image/svg+xml,%3Csvg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff" fill-opacity="0.05" fill-rule="evenodd"%3E%3Cpath d="M0 0h10v10H0zM2 0a2 2 0 0 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 0 1 0 4 2 2 0 0 1 0-4zM2 6a2 2 0 0 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 0 1 0 4 2 2 0 0 1 0-4z"%3E%3C/path%3E%3C/g%3E%3C/svg%3E');
         }
 
-        /* Modal styles */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 999; /* Above everything else */
+        /* Styles for expandable content */
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s ease-in-out, opacity 0.7s ease-in-out;
             opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            /* Adjust padding if needed inside the expanded part */
+             padding-top: 0;
+             padding-bottom: 0;
         }
 
-        .modal.open {
+        .expanded-content {
+            max-height: 1000px; /* Adjust as needed, large enough to show content */
             opacity: 1;
-            visibility: visible;
+             /* Adjust padding if needed inside the expanded part */
+             padding-top: 1rem; /* Add space above expanded content */
         }
 
-        .modal-content {
-            background-color: #1f2937; /* Dark background for modal */
-            color: #d1d5db; /* Light text */
-            padding: 2rem;
-            border-radius: 0.5rem;
-            max-width: 90%;
-            max-height: 90%;
-            overflow-y: auto; /* Allow scrolling if content is tall */
-            position: relative;
-            transform: scale(0.9);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .modal.open .modal-content {
-            transform: scale(1);
-        }
-
-        .close-button {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #9ca3af;
-            transition: color 0.2s ease-in-out;
-        }
-        .close-button:hover {
-            color: #e5e7eb;
-        }
-         /* Style for images inside modal content */
-        .modal-content img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 1rem;
-            border-radius: 0.25rem;
+        .read-more-button {
+             cursor: pointer;
+             display: inline-block;
         }
     </style>
 </head>
@@ -161,13 +128,23 @@
                 </div>
                 <div class="w-full md:w-1/2 px-4" data-aos="fade-left" data-aos-duration="1200">
                     <h3 class="text-3xl font-semibold text-green-500 mb-6">Specialized in Energy & Smart Infrastructure Projects</h3>
-                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
-                        SVMC Energy & Smart Infra Pvt Ltd is a project company specializing in serving Government Organizations, PSUs, Nagar Nigam, and Private Sectors. Our team comprises highly qualified alumni with over 25 years of rich experience.
-                    </p>
-                     <p class="text-gray-300 text-lg leading-relaxed">
-                        We offer end-to-end support from inception to handover, focusing on detailed engineering, vendor management, site management, and supply chain optimization to deliver higher value.
-                    </p>
+
+                    <div class="about-content">
+                        <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                            [Summary Paragraph: Keep this concise, 2-3 sentences introducing SVMC Energy and its focus.]
+                        </p>
+                        <div class="expandable-content">
+                            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                                [Detail Paragraph 1: Add more depth about SVMC's mission, values, or history. Mention the target sectors (Government, PSUs, etc.) and the experienced team.]
+                            </p>
+                            <p class="text-gray-300 text-lg leading-relaxed">
+                                [Detail Paragraph 2: Elaborate on your unique approach, end-to-end support, focus areas (detailed engineering, etc.), and commitment to value.]
+                            </p>
+                            </div>
+                         <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-lg mt-4 transition duration-300 ease-in-out">Read More</button>
                     </div>
+
+                </div>
             </div>
         </div>
     </section>
@@ -176,47 +153,119 @@
         <div class="container mx-auto text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-12 text-orange-400" data-aos="fade-down">Our Key Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
                 <div class="bg-gray-700 text-gray-200 p-8 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="100">
                     <img src="https://placehold.co/100x100/f59e0b/000?text=Consult" alt="Consulting Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
                     <h3 class="text-2xl font-semibold text-orange-400 mb-4">Consultancy & PMU</h3>
-                    <p class="text-gray-300 leading-relaxed">
-                        Providing expert consultancy, Project Management Unit (PMU) services, and business development strategies for energy projects.
-                    </p>
+                    <div class="service-content">
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            [Summary: Brief intro to Consultancy services.]
+                        </p>
+                        <div class="expandable-content">
+                            <p class="text-gray-300 leading-relaxed mb-4">
+                                [Detail 1: Elaborate on types of consultancy (business development, strategic planning).]
+                            </p>
+                             <p class="text-gray-300 leading-relaxed">
+                                [Detail 2: Describe PMU services and how they benefit clients.]
+                            </p>
+                            </div>
+                         <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
                     </div>
+                </div>
+
                 <div class="bg-gray-700 text-gray-200 p-8 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="200">
                      <img src="https://placehold.co/100x100/10b981/000?text=Execute" alt="Execution Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
                     <h3 class="text-2xl font-semibold text-green-500 mb-4">Project Implementation & Execution</h3>
-                    <p class="text-gray-300 leading-relaxed">
-                        End-to-end project execution including detailed engineering, site management, and technical support.
-                    </p>
+                     <div class="service-content">
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            [Summary: Brief intro to Project Execution.]
+                        </p>
+                        <div class="expandable-content">
+                            <p class="text-gray-300 leading-relaxed mb-4">
+                                [Detail 1: Mention end-to-end process from planning to handover.]
+                            </p>
+                             <p class="text-gray-300 leading-relaxed">
+                                [Detail 2: Highlight detailed engineering, site management, and technical support.]
+                            </p>
+                            </div>
+                         <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                    </div>
                 </div>
+
                 <div class="bg-gray-700 text-gray-200 p-8 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="300">
                      <img src="https://placehold.co/100x100/3b82f6/000?text=Infra" alt="Infrastructure Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
                     <h3 class="text-2xl font-semibold text-blue-500 mb-4">Electrical & Smart Infra Work</h3>
-                    <p class="text-gray-300 leading-relaxed">
-                        Expertise in LT/HT Infra, line shifting, smart meter installation, and electrical contracting.
-                    </p>
+                     <div class="service-content">
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            [Summary: Brief intro to Infrastructure work.]
+                        </p>
+                        <div class="expandable-content">
+                            <p class="text-gray-300 leading-relaxed mb-4">
+                                [Detail 1: List specific expertise: LT/HT, line shifting, smart meters.]
+                            </p>
+                             <p class="text-gray-300 leading-relaxed">
+                                [Detail 2: Mention electrical contracting capabilities.]
+                            </p>
+                            </div>
+                         <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                    </div>
                 </div>
-                 <div class="bg-gray-700 text-gray-200 p-8 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="400">
+
+                <div class="bg-gray-700 text-gray-200 p-8 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="400">
                      <img src="https://placehold.co/100x100/a78bfa/000?text=EV" alt="EV Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
                     <h3 class="text-2xl font-semibold text-purple-400 mb-4">EV Consultancy & Infrastructure</h3>
-                    <p class="text-gray-300 leading-relaxed">
-                        Consultancy for EV charging infrastructure, battery swapping, fleet management, and OEM support.
-                    </p>
+                    <div class="service-content">
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            [Summary: Brief intro to EV services.]
+                        </p>
+                        <div class="expandable-content">
+                            <p class="text-gray-300 leading-relaxed mb-4">
+                                [Detail 1: List specific areas: charging infra, battery swapping, fleet management.]
+                            </p>
+                             <p class="text-gray-300 leading-relaxed">
+                                [Detail 2: Mention support for OEMs.]
+                            </p>
+                            </div>
+                         <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                    </div>
                 </div>
+
                  <div class="bg-gray-700 text-gray-200 p-8 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="500">
                      <img src="https://placehold.co/100x100/facc15/000?text=Solar" alt="Solar Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
                     <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Solar Projects (Ground & Rooftop)</h3>
-                    <p class="text-gray-300 leading-relaxed">
-                        Development and installation of Ground Mounted and Rooftop Solar projects.
-                    </p>
+                     <div class="service-content">
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            [Summary: Brief intro to Solar projects.]
+                        </p>
+                        <div class="expandable-content">
+                            <p class="text-gray-300 leading-relaxed mb-4">
+                                [Detail 1: Describe Ground Mounted solar capabilities.]
+                            </p>
+                             <p class="text-gray-300 leading-relaxed">
+                                [Detail 2: Describe Rooftop Solar capabilities.]
+                            </p>
+                            </div>
+                         <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                    </div>
                 </div>
+
                 <div class="bg-gray-700 text-gray-200 p-8 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="600">
                      <img src="https://placehold.co/100x100/065f46/000?text=O%26M" alt="O&M Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
                     <h3 class="text-2xl font-semibold text-green-700 mb-4">Operations & Maintenance</h3>
-                    <p class="text-gray-300 leading-relaxed">
-                       Maintaining installed infrastructure, including LED Street Lights and Smart Meters.
-                    </p>
+                     <div class="service-content">
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                           [Summary: Brief intro to O&M services.]
+                        </p>
+                        <div class="expandable-content">
+                            <p class="text-gray-300 leading-relaxed mb-4">
+                                [Detail 1: Mention maintenance for LED Street Lights.]
+                            </p>
+                             <p class="text-gray-300 leading-relaxed">
+                                [Detail 2: Mention O&M for Smart Meters and other infra.]
+                            </p>
+                            </div>
+                         <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -229,55 +278,90 @@
                  <div class="p-8 rounded-lg shadow-lg bg-gray-800 card" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://placehold.co/80x80/2563eb/fff?text=Skill" alt="Skilled Team Icon" class="mx-auto mb-4 w-14 h-14 object-contain">
                      <h3 class="text-2xl font-semibold text-blue-500 mb-3">Highly Skilled Team</h3>
-                     <p class="text-gray-300">Comprising IITs/IIMs alumni with extensive experience.</p>
+                     <div class="why-choose-us-content">
+                        <p class="text-gray-300 mb-4">[Summary: Comprising IITs/IIMs alumni with extensive experience.]</p>
+                         <div class="expandable-content">
+                             <p class="text-gray-300">[Detail: Mention the 25+ years of experience and their background.]</p>
+                             </div>
+                        <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                    </div>
                  </div>
+
                  <div class="p-8 rounded-lg shadow-lg bg-gray-800 card" data-aos="fade-up" data-aos-delay="200">
                      <img src="https://placehold.co/80x80/10b981/fff?text=Tech" alt="Technology Icon" class="mx-auto mb-4 w-14 h-14 object-contain">
                     <h3 class="text-2xl font-semibold text-green-500 mb-3">Cutting Edge Technology</h3>
-                    <p class="text-gray-300">Utilizing the latest advancements in energy and smart infrastructure.</p>
+                     <div class="why-choose-us-content">
+                        <p class="text-gray-300 mb-4">[Summary: Utilizing the latest advancements.]</p>
+                         <div class="expandable-content">
+                             <p class="text-gray-300">[Detail: Elaborate on the specific technologies or innovative approaches used in energy and smart infra.]</p>
+                             </div>
+                        <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                    </div>
                 </div>
+
                 <div class="p-8 rounded-lg shadow-lg bg-gray-800 card" data-aos="fade-up" data-aos-delay="300">
                     <img src="https://placehold.co/80x80/f59e0b/fff?text=Value" alt="Value Icon" class="mx-auto mb-4 w-14 h-14 object-contain">
                     <h3 class="text-2xl font-semibold text-orange-500 mb-3">Higher Value for Money</h3>
-                    <p class="text-gray-300">Optimized project costs and customized designs for efficiency.</p>
+                    <div class="why-choose-us-content">
+                        <p class="text-gray-300 mb-4">[Summary: Optimized project costs and customized designs.]</p>
+                         <div class="expandable-content">
+                             <p class="text-gray-300">[Detail: Explain *how* costs are optimized and the benefit of customized designs for client value.]</p>
+                             </div>
+                        <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                    </div>
                 </div>
              </div>
         </div>
      </section>
 
+
     <section id="projects" class="bg-gray-800 text-gray-200 section-padding bg-pattern">
         <div class="container mx-auto text-center">
             <h2 class="text-4xl md:text-5xl font-bold text-blue-500 mb-12" data-aos="fade-down">Our Project Showcase</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden card project-card" data-aos="zoom-in-up" data-aos-delay="100" data-project-id="led-lights">
+
+                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden card" data-aos="zoom-in-up" data-aos-delay="100">
                     <img src="https://placehold.co/600x400/1f2937/9ca3af?text=Project+1" alt="Project 1" class="w-full h-60 object-cover object-center">
                     <div class="p-6 text-left">
-                        <h3 class="text-2xl font-semibold text-green-500 mb-2">Installation of 4 Lakh LED Street Lights</h3>
-                        <p class="text-gray-300 leading-relaxed">Highlight: Government of India PSU project.</p>
+                        <h3 class="text-2xl font-semibold text-green-500 mb-2">[Project Title 1]</h3>
+                        <div class="project-content">
+                            <p class="text-gray-300 leading-relaxed mb-4">[Summary: e.g., "Installation of 4 Lakh LED Street Lights..."]</p>
+                            <div class="expandable-content">
+                                <p class="text-gray-300 leading-relaxed">[Detail: Elaborate on the project's scope, location, impact, or specific challenges/solutions.]</p>
+                                </div>
+                             <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden card project-card" data-aos="zoom-in-up" data-aos-delay="200" data-project-id="solar-maharashtra">
+
+                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden card" data-aos="zoom-in-up" data-aos-delay="200">
                     <img src="https://placehold.co/600x400/1f2937/9ca3af?text=Project+2" alt="Project 2" class="w-full h-60 object-cover object-center">
                      <div class="p-6 text-left">
-                        <h3 class="text-2xl font-semibold text-orange-500 mb-2">Ground Mounted Solar Project</h3>
-                        <p class="text-gray-300 leading-relaxed">Highlight: Project executed in Maharashtra.</p>
+                        <h3 class="text-2xl font-semibold text-orange-500 mb-2">[Project Title 2]</h3>
+                         <div class="project-content">
+                            <p class="text-gray-300 leading-relaxed mb-4">[Summary: e.g., "Ground Mounted Solar Project in Maharashtra."]</p>
+                            <div class="expandable-content">
+                                <p class="text-gray-300 leading-relaxed">[Detail: Elaborate on the project's scope, location, impact, or specific challenges/solutions.]</p>
+                                </div>
+                             <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden card project-card" data-aos="zoom-in-up" data-aos-delay="300" data-project-id="smart-meters-up">
+
+                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden card" data-aos="zoom-in-up" data-aos-delay="300">
                     <img src="https://placehold.co/600x400/1f2937/9ca3af?text=Project+3" alt="Project 3" class="w-full h-60 object-cover object-center">
                      <div class="p-6 text-left">
-                        <h3 class="text-2xl font-semibold text-blue-500 mb-2">Smart Meter Installation Project</h3>
-                        <p class="text-gray-300 leading-relaxed">Highlight: Project implemented in Uttar Pradesh.</p>
+                        <h3 class="text-2xl font-semibold text-blue-500 mb-2">[Project Title 3]</h3>
+                        <div class="project-content">
+                            <p class="text-gray-300 leading-relaxed mb-4">[Summary: e.g., "Smart Meter Installation Project in UP."]</p>
+                            <div class="expandable-content">
+                                <p class="text-gray-300 leading-relaxed">[Detail: Elaborate on the project's scope, location, impact, or specific challenges/solutions.]</p>
+                                </div>
+                             <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden card project-card" data-aos="zoom-in-up" data-aos-delay="400" data-project-id="ev-consultancy-case">
-                    <img src="https://placehold.co/600x400/1f2937/9ca3af?text=EV+Consultancy" alt="EV Consultancy Project" class="w-full h-60 object-cover object-center">
-                     <div class="p-6 text-left">
-                        <h3 class="text-2xl font-semibold text-purple-400 mb-2">EV Charging Infrastructure Consultancy</h3>
-                        <p class="text-gray-300 leading-relaxed">Highlight: Strategic planning for EV industry client.</p>
-                    </div>
                 </div>
-            </div>
              <div class="mt-14" data-aos="fade-up">
                  <a href="#" class="inline-block bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-10 rounded-full text-lg shadow-xl transform hover:scale-105 transition duration-300 ease-in-out border-2 border-green-600 hover:border-green-500">
                     View More Projects
@@ -334,152 +418,41 @@
         </div>
     </footer>
 
-    <div id="projectModal" class="modal hidden">
-        <div class="modal-content">
-             <span class="close-button">&times;</span>
-            <div id="modalContentBody">
-                </div>
-        </div>
-    </div>
-    <div id="project-details-container" class="hidden">
-
-        <div id="led-lights">
-            <h3 class="text-3xl font-bold text-green-500 mb-4">Installation of 4 Lakh LED Street Lights</h3>
-            <img src="https://placehold.co/800x500/1f2937/9ca3af?text=LED+Project+Image" alt="LED Street Lights Project" class="mb-4">
-            <p class="text-gray-300 mb-4">
-                Detailed description of the LED Street Lights project executed for a Government of India PSU.
-                Include details about the scope, scale (4 Lakh lights), technology used, challenges overcome,
-                and the positive impact (energy savings, improved public lighting).
-            </p>
-            <p class="text-gray-400 text-sm">Location: [Mention State/Area if applicable]</p>
-            <p class="text-gray-400 text-sm">Client: Government of India PSU</p>
-             </div>
-
-        <div id="solar-maharashtra">
-            <h3 class="text-3xl font-bold text-orange-500 mb-4">Ground Mounted Solar Project in Maharashtra</h3>
-             <img src="https://placehold.co/800x500/1f2937/9ca3af?text=Solar+Project+Image" alt="Maharashtra Solar Project" class="mb-4">
-            <p class="text-gray-300 mb-4">
-                Detailed description of the Ground Mounted Solar project in Maharashtra.
-                Explain the capacity (e.g., MW), technology (panel type, inverters), construction process,
-                and its contribution to renewable energy generation.
-            </p>
-            <p class="text-gray-400 text-sm">Location: Maharashtra</p>
-            <p class="text-gray-400 text-sm">Capacity: [Mention MW]</p>
-             </div>
-
-        <div id="smart-meters-up">
-            <h3 class="text-3xl font-bold text-blue-500 mb-4">Smart Meter Installation Project in Uttar Pradesh</h3>
-             <img src="https://placehold.co/800x500/1f2937/9ca3af?text=Smart+Meter+Image" alt="UP Smart Meter Project" class="mb-4">
-            <p class="text-gray-300 mb-4">
-                Detailed description of the Smart Meter installation project in Uttar Pradesh.
-                Discuss the scope (number of meters), benefits of smart metering (accurate billing, grid management),
-                and the logistics of large-scale deployment.
-            </p>
-            <p class="text-gray-400 text-sm">Location: Uttar Pradesh</p>
-            <p class="text-gray-400 text-sm">Number of Meters: [Mention count]</p>
-             </div>
-
-         <div id="ev-consultancy-case">
-            <h3 class="text-3xl font-bold text-purple-400 mb-4">EV Charging Infrastructure Consultancy Case Study</h3>
-             <img src="https://placehold.co/800x500/1f2937/9ca3af?text=EV+Consultancy+Image" alt="EV Consultancy Case Study" class="mb-4">
-            <p class="text-gray-300 mb-4">
-                Detailed description of an EV charging infrastructure consultancy project.
-                Outline the client's challenge, SVMC's approach (assessment, strategic planning),
-                recommendations provided (site selection, technology, business models), and the outcome.
-            </p>
-            <p class="text-gray-400 text-sm">Service Type: Consultancy</p>
-            <p class="text-gray-400 text-sm">Focus Area: EV Charging Infrastructure</p>
-             </div>
-
-
-        </div>
-     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
             duration: 1200, // Animation duration in ms
             once: true, // Whether animation should happen only once - while scrolling down
             easing: 'ease-in-out', // Easing function
-            delay: 100, // Default delay for elements without individual delay
+            delay: 100, // Default delay
         });
 
         // Simple JS for Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        const button = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        button.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
         });
          // Close menu when a link is clicked
-        mobileMenu.querySelectorAll('a').forEach(link => {
+        menu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden'); // Hide menu after clicking
+                menu.classList.add('hidden'); // Hide menu after clicking
             });
         });
 
-        // ========================= MODAL JS =========================
-        const projectModal = document.getElementById('projectModal');
-        const modalContentBody = document.getElementById('modalContentBody');
-        const closeButton = projectModal.querySelector('.close-button');
-        const projectCards = document.querySelectorAll('.project-card'); // Select all elements with the class 'project-card'
-        const projectDetailsContainer = document.getElementById('project-details-container');
+        // JavaScript for Read More/Read Less Toggle
+        document.querySelectorAll('.read-more-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const expandableContent = button.previousElementSibling; // The div.expandable-content
+                expandableContent.classList.toggle('expanded-content');
 
-        // Function to open the modal
-        function openModal(projectId) {
-            const projectDetailContent = projectDetailsContainer.querySelector(`#${projectId}`);
-            if (projectDetailContent) {
-                modalContentBody.innerHTML = projectDetailContent.innerHTML; // Copy content
-                projectModal.classList.add('open'); // Show modal
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
-            }
-        }
-
-        // Function to close the modal
-        function closeModal() {
-            projectModal.classList.remove('open'); // Hide modal
-            document.body.style.overflow = ''; // Re-enable background scrolling
-             modalContentBody.innerHTML = ''; // Clear modal content
-        }
-
-        // Add click event listeners to project cards
-        projectCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const projectId = card.getAttribute('data-project-id');
-                if (projectId) {
-                    openModal(projectId);
+                if (expandableContent.classList.contains('expanded-content')) {
+                    button.textContent = 'Read Less';
+                } else {
+                    button.textContent = 'Read More';
                 }
             });
         });
-
-        // Add click event listener to the close button
-        closeButton.addEventListener('click', closeModal);
-
-        // Add click event listener to the modal overlay
-        projectModal.addEventListener('click', (event) => {
-            // If clicked directly on the overlay (not the modal content)
-            if (event.target === projectModal) {
-                closeModal();
-            }
-        });
-
-         // Close modal with Escape key
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && projectModal.classList.contains('open')) {
-                closeModal();
-            }
-        });
-        // ======================= END MODAL JS =======================
-
-
-         // Optional: JS for 'Read More' in About section if you uncommented the button
-         // const readMoreButton = document.getElementById('read-more-about'); // Give your button this ID
-         // const moreAboutText = document.getElementById('more-about-text'); // Wrap extra text in a div with this ID
-         // if (readMoreButton && moreAboutText) {
-         //     moreAboutText.classList.add('hidden'); // Hide by default
-         //     readMoreButton.addEventListener('click', () => {
-         //         moreAboutText.classList.toggle('hidden');
-         //         readMoreButton.textContent = moreAboutText.classList.contains('hidden') ? 'Read More' : 'Read Less';
-         //     });
-         // }
-
     </script>
 
 </body>
