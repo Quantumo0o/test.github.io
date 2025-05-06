@@ -3,59 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>Solar Energy Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif; /* Default font */
         }
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif; /* For headings and 강조 */
+        }
+
+        .bg-gradient-primary {
+            background: linear-gradient(to right, #86ef7d, #22c55e); /* Tailwind green shades */
+        }
+        .bg-gradient-secondary {
+             background: linear-gradient(to right, #f97316, #ea580c);
+        }
+
+        .bg-gradient-tertiary{
+            background: linear-gradient(to right, #3b82f6, #1d4ed8);
+        }
+        .text-shadow-md {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .drop-shadow-lg {
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Custom CSS for enhanced visuals */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+            backdrop-filter: blur(10px); /* Add blur effect */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Add a border */
+        }
+        .dark .card {
+            background-color: rgba(255, 255, 255, 0.1);
+             backdrop-filter: blur(10px);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glassmorphism {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+        }
+        .dark .glassmorphism{
+             background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+        }
+
     </style>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900">
-    <header class="bg-blue-500 dark:bg-blue-700 text-white py-4">
-        <div class="container mx-auto px-4">
-            <h1 class="text-3xl font-semibold">Welcome to My Website</h1>
+    <header class="bg-gradient-primary text-white py-4 md:py-6">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="flex items-center text-xl md:text-2xl font-semibold font-montserrat">
+                 <img src="https://placehold.co/50x50/EEE/31343C" alt="Company Logo" class="mr-2 rounded-full">
+                <span class="text-shadow-md">Slnko Energy</span>
+            </a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-4 font-montserrat">
+                    <li><a href="#services" class="hover:text-gray-200 transition duration-300">Services</a></li>
+                    <li><a href="#projects" class="hover:text-gray-200 transition duration-300">Projects</a></li>
+                    <li><a href="#about" class="hover:text-gray-200 transition duration-300">About Us</a></li>
+                    <li><a href="#contact" class="hover:text-gray-200 transition duration-300">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="hamburger-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle Navigation">
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
         </div>
     </header>
 
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
+        <div class="bg-gray-800 w-80 h-full absolute right-0 p-6">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu-btn" class="text-white focus:outline-none" aria-label="Close Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="block font-montserrat">
+                <ul class="space-y-4">
+                    <li><a href="#services" class="block text-lg text-white hover:text-gray-200 transition duration-300">Services</a></li>
+                    <li><a href="#projects" class="block text-lg text-white hover:text-gray-200 transition duration-300">Projects</a></li>
+                    <li><a href="#about" class="block text-lg text-white hover:text-gray-200 transition duration-300">About Us</a></li>
+                    <li><a href="#contact" class="block text-lg text-white hover:text-gray-200 transition duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
     <main class="container mx-auto px-4 py-8">
-        <section class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 mb-6">
-            <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">About Me</h2>
-            <p class="text-gray-700 dark:text-gray-300">
-                Hello! I'm [Your Name], and I'm excited to share my website with you. This is a simple example, but it demonstrates how you can create a website using HTML, CSS, and JavaScript.
+        <section id="hero" class="bg-gradient-primary text-white rounded-lg py-16 md:py-24 px-4 md:px-8 mb-8 text-center parallax" data-aos="fade-in" data-aos-duration="1000">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-shadow-md font-montserrat drop-shadow-lg">Clean Energy for a Brighter Future</h2>
+            <p class="text-lg md:text-xl mb-8 text-gray-100 max-w-3xl mx-auto drop-shadow-lg">
+                We provide innovative solar solutions for residential, commercial, and industrial clients.
             </p>
+            <a href="#contact" class="bg-white text-green-600 py-3 px-6 rounded-full font-semibold text-lg hover:bg-gray-100 transition duration-300 font-montserrat">
+                Request a Quote
+            </a>
         </section>
 
-        <section class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 mb-6">
-            <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">My Projects</h2>
-            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
-                <li>Project 1: A simple HTML website</li>
-                <li>Project 2: A responsive design example</li>
-                <li>Project 3: A JavaScript interactive page</li>
-            </ul>
+        <section id="services" class="mb-16" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-white text-center mb-8 font-montserrat">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card rounded-lg shadow-md p-6 flex flex-col justify-between bg-gradient-secondary">
+                    <h3 class="text-xl font-semibold text-white mb-4 font-montserrat">Residential Solar</h3>
+                    <p class="text-gray-100 mb-4">
+                        Customized solar solutions for homes, reducing electricity bills and environmental impact.
+                    </p>
+                    <a href="#" class="text-blue-500 hover:underline font-montserrat">Learn More</a>
+                </div>
+                <div class="card rounded-lg shadow-md p-6 flex flex-col justify-between">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4 font-montserrat">Commercial Solar</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        Solar solutions for businesses, providing cost savings and sustainability benefits.
+                    </p>
+                    <a href="#" class="text-blue-500 hover:underline font-montserrat">Learn More</a>
+                </div>
+                <div class="card rounded-lg shadow-md p-6 flex flex-col justify-between bg-gradient-tertiary">
+                    <h3 class="text-xl font-semibold text-white mb-4 font-montserrat">Industrial Solar</h3>
+                    <p class="text-gray-100 mb-4">
+                        Large-scale solar installations for industrial facilities, maximizing energy efficiency.
+                    </p>
+                    <a href="#" class="text-blue-500 hover:underline font-montserrat">Learn More</a>
+                </div>
+            </div>
         </section>
 
-        <section class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
-            <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Contact Me</h2>
-            <p class="text-gray-700 dark:text-gray-300 mb-4">
-                Feel free to reach out to me via email: <a href="mailto:your.email@example.com" class="text-blue-500 hover:underline">your.email@example.com</a>
+        <section id="projects" class="mb-16" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-white text-center mb-8 font-montserrat">Our Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card rounded-lg shadow-md overflow-hidden">
+                    <img src="https://placehold.co/400x300/EEE/31343C" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2 font-montserrat">Project 1: Residential Installation</h3>
+                        <p class="text-gray-700 dark:text-gray-300">A successful residential solar installation.</p>
+                    </div>
+                </div>
+                <div class="card rounded-lg shadow-md overflow-hidden">
+                    <img src="https://placehold.co/400x300/EEE/31343C" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2 font-montserrat">Project 2: Commercial Solar</h3>
+                        <p class="text-gray-700 dark:text-gray-300">A large-scale commercial solar project.</p>
+                    </div>
+                </div>
+                <div class="card rounded-lg shadow-md overflow-hidden">
+                    <img src="https://placehold.co/400x300/EEE/31343C" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2 font-montserrat">Project 3: Industrial Solar</h3>
+                        <p class="text-gray-700 dark:text-gray-300">An industrial solar installation for a factory.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="rounded-lg py-12 md:py-16 px-4 md:px-8 mb-16 parallax glassmorphism" data-aos="fade-up" data-aos-duration="1000">
+             <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-white text-center mb-8 font-montserrat drop-shadow-lg">About Us</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <img src="https://placehold.co/400x300/EEE/31343C" alt="About Us" class="w-full md:w-1/2 rounded-lg shadow-lg">
+                <div class="md:w-1/2">
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        Slnko Energy is a leading provider of solar energy solutions, committed to delivering high-quality
+                        products and services. With years of experience in the industry, we strive to make solar energy
+                        accessible and affordable for everyone.
+                    </p>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Our team of experts is dedicated to designing and installing customized solar systems that meet
+                        the unique needs of our clients. We are passionate about sustainability and believe that solar
+                        energy is the key to a cleaner future.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-gradient-primary text-white rounded-lg py-12 md:py-16 px-4 md:px-8 text-center parallax" data-aos="fade-in" data-aos-duration="1000">
+            <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-shadow-md font-montserrat drop-shadow-lg">Contact Us</h2>
+            <p class="text-lg mb-8 text-gray-100 max-w-3xl mx-auto drop-shadow-lg">
+                Get in touch with us today to learn more about our solar energy solutions and how we can help you
+                save money and reduce your carbon footprint.
             </p>
-            <p class="text-gray-700 dark:text-gray-300">
-                You can also connect with me on <a href="https://github.com/yourusername" target="_blank" class="text-blue-500 hover:underline">GitHub</a>.
-            </p>
+            <a href="mailto:info@example.com" class="bg-white text-green-600 py-3 px-6 rounded-full font-semibold text-lg hover:bg-gray-100 transition duration-300 font-montserrat">
+                info@example.com
+            </a>
         </section>
     </main>
 
     <footer class="bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 py-4">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 My Website. All rights reserved.</p>
+        <div class="container mx-auto px-4 text-center font-montserrat">
+            <p>&copy; 2024 Slnko Energy. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // You can add JavaScript here for interactive features
-        console.log("Welcome to my website!");
+       const hamburgerBtn = document.getElementById("hamburger-btn");
+       const mobileMenu = document.getElementById("mobile-menu");
+       const closeMenuBtn = document.getElementById("close-menu-btn");
+       const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+       const navLinks = document.querySelectorAll('header nav a');
+       const sections = document.querySelectorAll('section');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle("hidden");
+        }
+
+        hamburgerBtn.addEventListener("click", toggleMobileMenu);
+        closeMenuBtn.addEventListener("click", toggleMobileMenu);
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener("click", toggleMobileMenu);
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && event.target !== hamburgerBtn) {
+                toggleMobileMenu();
+            }
+        });
+
+        function updateActiveNavLink() {
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavLink);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        AOS.init();
     </script>
 </body>
 </html>
