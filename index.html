@@ -3,33 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SVMC Energy & Smart Infra Pvt Ltd offers cutting-edge solutions in project management, consultancy, electrical infra work, EV charging solutions, and solar projects for government and private sectors.">
     <title>SVMC Energy & Smart Infra - Innovative Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
-
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         html { scroll-behavior: smooth; }
-        body { font-family: 'Rajdhani', sans-serif; /* Example custom font */ }
-        h1, h2, h3 { font-family: 'Orbitron', sans-serif; /* Example headline font */ }
+        body { font-family: 'Rajdhani', sans-serif; }
+        h1, h2, h3 { font-family: 'Orbitron', sans-serif; }
 
-        .section-padding { padding: 7rem 1.5rem; } /* Increased padding */
-        @media (min-width: 768px) { .section-padding { padding: 9rem 4rem; } } /* More padding on larger screens */
+        .section-padding { padding: 6rem 1.5rem; } /* Adjusted padding */
+        @media (min-width: 768px) { .section-padding { padding: 8rem 4rem; } } /* Adjusted padding */
 
         .card {
-            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
-            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-            backdrop-filter: blur(5px); /* Frosted glass effect */
+            transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out; /* Faster transition */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
         }
         .card:hover {
-            transform: translateY(-8px); /* More pronounced lift */
-            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
         }
 
-         /* Gradient text effect */
         .gradient-text {
             background: linear-gradient(45deg, #065f46, #10b981, #2563eb, #3b82f6, #f59e0b, #fbbf24);
             -webkit-background-clip: text;
@@ -44,41 +43,34 @@
             100% { background-position: 0% 50%; }
         }
 
-
-         /* Subtle pattern background */
         .bg-pattern {
-             background-image: url('data:image/svg+xml,%3Csvg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff" fill-opacity="0.05" fill-rule="evenodd"%3E%3Cpath d="M0 0h10v10H0zM2 0a2 2 0 0 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 0 1 0 4 2 2 0 0 1 0-4zM2 6a2 2 0 0 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 0 1 0 4 2 2 0 0 1 0-4z"%3E%3C/path%3E%3C/g%3E%3C/svg%3E');
+            background-image: url('data:image/svg+xml,%3Csvg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff" fill-opacity="0.05" fill-rule="evenodd"%3E%3Cpath d="M0 0h10v10H0zM2 0a2 2 0 0 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 0 1 0 4 2 2 0 0 1 0-4zM2 6a2 2 0 0 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 0 1 0 4 2 2 0 0 1 0-4z"%3E%3C/path%3E%3C/g%3E%3C/svg%3E');
         }
 
-        /* Styles for expandable content */
         .expandable-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.7s ease-in-out, opacity 0.7s ease-in-out;
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out; /* Faster transition */
             opacity: 0;
-            /* Adjust padding if needed inside the expanded part */
-             padding-top: 0;
-             padding-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
         }
-
         .expanded-content {
-            max-height: 1000px; /* Adjust as needed, large enough to show content */
+            max-height: 1200px; /* Increased max-height for potentially longer content */
             opacity: 1;
-             /* Adjust padding if needed inside the expanded part */
-             padding-top: 1rem; /* Add space above expanded content */
+            padding-top: 1rem;
         }
-
         .read-more-button {
-             cursor: pointer;
-             display: inline-block;
+            cursor: pointer;
+            display: inline-block;
         }
     </style>
 </head>
 <body class="font-sans bg-gray-900 text-gray-200">
 
-    <nav class="bg-gray-800 p-4 text-gray-200 sticky top-0 z-50 shadow-xl bg-opacity-80 backdrop-filter backdrop-blur-lg">
+    <header class="bg-gray-800 p-4 text-gray-200 sticky top-0 z-50 shadow-xl bg-opacity-80 backdrop-filter backdrop-blur-lg">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-green-500">SVMC <span class="text-blue-400">Energy</span></a>
+            <a href="#home" class="text-2xl font-bold text-green-500">SVMC <span class="text-blue-400">Energy</span></a>
             <div class="space-x-6 hidden md:flex items-center text-lg">
                 <a href="#home" class="hover:text-green-400 transition duration-300 ease-in-out">Home</a>
                 <a href="#about" class="hover:text-green-400 transition duration-300 ease-in-out">About Us</a>
@@ -86,29 +78,29 @@
                 <a href="#projects" class="hover:text-green-400 transition duration-300 ease-in-out">Projects</a>
                 <a href="#contact" class="hover:text-green-400 transition duration-300 ease-in-out">Contact</a>
             </div>
-             <button id="mobile-menu-button" class="md:hidden focus:outline-none text-gray-200 hover:text-green-400 transition duration-300 ease-in-out">
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none text-gray-200 hover:text-green-400 transition duration-300 ease-in-out" aria-expanded="false" aria-controls="mobile-menu">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
-         <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-gray-800 mt-2 py-3 space-y-3 text-gray-200 shadow-lg rounded-b-lg">
-            <a href="#home" class="block px-4 py-2 hover:bg-gray-700 hover:text-green-400 transition duration-300 ease-in-out">Home</a>
-            <a href="#about" class="block px-4 py-2 hover:bg-gray-700 hover:text-green-400 transition duration-300 ease-in-out">About Us</a>
-            <a href="#services" class="block px-4 py-2 hover:bg-gray-700 hover:text-green-400 transition duration-300 ease-in-out">Services</a>
-            <a href="#projects" class="block px-4 py-2 hover:bg-gray-700 hover:text-green-400 transition duration-300 ease-in-out">Projects</a>
-            <a href="#contact" class="block px-4 py-2 hover:bg-gray-700 hover:text-green-400 transition duration-300 ease-in-out">Contact</a>
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-gray-800 mt-2 py-3 space-y-3 text-gray-200 shadow-lg rounded-b-lg" role="menu">
+            <a href="#home" class="block px-4 py-2 hover:bg-gray-700 hover:text-green-400 transition duration-300 ease-in-out" role="menuitem">Home</a>
+            <a href="#about" class="block px-4 py-2 hover:bg-gray-700 hover:text-green-400 transition duration-300 ease-in-out" role="menuitem">About Us</a>
+            <a href="#services" class="block px-4 py-2 hover:bg-gray-700 hover:text-green-400 transition duration-300 ease-in-out" role="menuitem">Services</a>
+            <a href="#projects" class="block px-4 py-2 hover:bg-gray-700 hover:text-green-400 transition duration-300 ease-in-out" role="menuitem">Projects</a>
+            <a href="#contact" class="block px-4 py-2 hover:bg-gray-700 hover:text-green-400 transition duration-300 ease-in-out" role="menuitem">Contact</a>
         </div>
-    </nav>
+    </header>
 
-    <section id="home" class="bg-gradient-to-br from-gray-900 to-blue-900 text-white section-padding flex items-center justify-center min-h-screen bg-cover bg-center relative overflow-hidden bg-pattern" style="background-image: url('https://placehold.co/1920x1080/1f2937/ffffff?text=Energy+Field'); background-blend-mode: multiply;">
-         <div class="absolute inset-0 bg-black opacity-50"></div>
-         <div class="container mx-auto text-center z-10">
-            <h1 class="text-6xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-lg gradient-text" data-aos="zoom-in" data-aos-duration="1500">
+    <section id="home" class="bg-gradient-to-br from-gray-900 to-blue-900 text-white section-padding flex items-center justify-center min-h-screen bg-cover bg-center relative overflow-hidden bg-pattern" style="background-image: url('https://placehold.co/1920x1080/1f2937/ffffff?text=Sustainable+Energy+Solutions'); background-blend-mode: multiply;">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto text-center z-10">
+            <h1 class="text-6xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-lg gradient-text" data-aos="zoom-in" data-aos-duration="1000">
                 Powering Innovation in Energy & Smart Infra
             </h1>
-            <p class="text-xl md:text-2xl mb-10 max-w-4xl mx-auto drop-shadow" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-                SVMC Energy & Smart Infra Pvt Ltd delivers cutting-edge solutions for a sustainable and connected future. [cite: 1]
+            <p class="text-xl md:text-2xl mb-10 max-w-4xl mx-auto drop-shadow" data-aos="fade-up" data-aos-delay="200">
+                SVMC Energy & Smart Infra Pvt Ltd delivers cutting-edge solutions for Government Organizations, PSUs, Nagar Nigam, and Private Sectors, driving a sustainable and connected future. [cite: 28, 29]
             </p>
-            <div data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+            <div data-aos="fade-up" data-aos-delay="400">
                 <a href="#services" class="inline-block bg-orange-600 hover:bg-orange-500 text-white font-bold py-3 px-12 rounded-full text-lg shadow-xl transform hover:scale-105 transition duration-300 ease-in-out border-2 border-orange-600 hover:border-orange-500 mr-4">
                     Our Solutions
                 </a>
@@ -123,27 +115,25 @@
         <div class="container mx-auto">
             <h2 class="text-4xl md:text-5xl font-bold text-center text-blue-500 mb-12" data-aos="fade-down">About SVMC Energy & Smart Infra Pvt Ltd</h2>
             <div class="flex flex-wrap items-center -mx-4">
-                <div class="w-full md:w-1/2 px-4 mb-8 md:mb-0" data-aos="fade-right" data-aos-duration="1200">
-                    <img src="https://placehold.co/700x450/1f2937/9ca3af?text=Our+Expertise" alt="About Us - SVMC Energy" class="rounded-lg shadow-lg w-full h-auto object-cover">
+                <div class="w-full md:w-1/2 px-4 mb-8 md:mb-0" data-aos="fade-right">
+                    <img src="https://placehold.co/700x450/1f2937/9ca3af?text=SVMC+Team+Expertise" alt="Our Expertise in Energy and Smart Infrastructure" class="rounded-lg shadow-lg w-full h-auto object-cover">
                 </div>
-                <div class="w-full md:w-1/2 px-4" data-aos="fade-left" data-aos-duration="1200">
-                    <h3 class="text-3xl font-semibold text-green-500 mb-6">Specialized Project Company for Government and Private Sectors</h3>
-
+                <div class="w-full md:w-1/2 px-4" data-aos="fade-left">
+                    <h3 class="text-3xl font-semibold text-green-500 mb-6">Specialized Project Company for Diverse Sectors</h3>
                     <div class="about-content">
                         <p class="text-gray-300 text-lg leading-relaxed mb-4">
-                           SVMC Energy & Smart Infra Pvt Ltd is a project company working in the field of Projects & Operations/Implementation/Consultancy/PMU/Demand Aggregator for Government Organizations, PSUs, Nagar Nigam, and Private Sectors. [cite: 2]
+                            SVMC Energy & Smart Infra Pvt Ltd is a dynamic project company actively working in Projects & Operations, Implementation, Consultancy, PMU, and as a Demand Aggregator. We cater to Government Organizations, PSUs, Nagar Nigam, and Private Sectors. [cite: 29]
                         </p>
-                        <div class="expandable-content">
+                        <div class="expandable-content" id="about-expandable">
                             <p class="text-gray-300 text-lg leading-relaxed mb-4">
-                                Our Team is Comprised of Highly Qualified (IITs/IIMs) Alumni having rich experience of more than 25 Years in various services. [cite: 2] We provide end-to-end support, staying with our clients from the inception of the project design stage to pre-bid through planning, engineering, procurement, execution, and handover. [cite: 9]
+                                Our team comprises highly qualified alumni from IITs/IIMs, bringing a wealth of experience exceeding 25 years across our service domains. [cite: 29] We are committed to providing end-to-end support, partnering with our clients from the initial project design stage and pre-bid processes, through meticulous planning, engineering, procurement, flawless execution, and final handover. [cite: 36]
                             </p>
                             <p class="text-gray-300 text-lg leading-relaxed">
-                                Our holistic approach ensures that the project is optimized for design along with other aspects such as execution, durability, and operations thereby creating higher value for money. [cite: 8]
+                                Our holistic approach ensures each project is optimized not only for design but also for execution efficiency, long-term durability, and operational excellence, thereby creating superior value for money. [cite: 35] We believe in transforming tomorrow through innovative and sustainable solutions. [cite: 31]
                             </p>
                         </div>
-                         <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-lg mt-4 transition duration-300 ease-in-out">Read More</button>
+                        <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-lg mt-4 transition duration-300 ease-in-out" aria-expanded="false" aria-controls="about-expandable">Read More</button>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -155,165 +145,161 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
                 <div class="bg-gray-700 text-gray-200 p-8 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="100">
-                    <img src="https://placehold.co/100x100/f59e0b/000?text=Consult" alt="Consulting Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
+                    <img src="https://placehold.co/100x100/f59e0b/000?text=Consult" alt="Consultancy and PMU Services Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
                     <h3 class="text-2xl font-semibold text-orange-400 mb-4">Consultancy & PMU</h3>
                     <div class="service-content">
                         <p class="text-gray-300 leading-relaxed mb-4">
-                           Providing expert Consultancy and Project Management Unit (PMU) services. [cite: 2]
+                            Expert Consultancy and Project Management Unit (PMU) services for strategic growth and operational excellence. [cite: 29]
                         </p>
-                        <div class="expandable-content">
+                        <div class="expandable-content" id="consultancy-expandable">
                             <p class="text-gray-300 leading-relaxed mb-4">
-                                Our consultancy covers Business Development, Strategic Project Planning, Assessment of Challenges, and Management Consultancy Services. [cite: 2, 17] We offer tailored recommendations aligning with your business goals and market dynamics. [cite: 15]
+                                Our consultancy covers Business Development, Strategic Project Planning, Assessment of Challenges, and Management Consultancy Services. [cite: 4, 29] We offer tailored recommendations aligning with your business goals and market dynamics. [cite: 2]
                             </p>
-                             <p class="text-gray-300 leading-relaxed">
-                                PMU services include support for Market Expansion, Business Development Strategies, Revenue Diversification, and exploring Partnership Opportunities. [cite: 18, 19, 20]
+                            <p class="text-gray-300 leading-relaxed">
+                                PMU services include support for Market Expansion, Business Development Strategies, Revenue Diversification, and exploring Partnership Opportunities. [cite: 7]
                             </p>
                         </div>
-                         <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                        <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out" aria-expanded="false" aria-controls="consultancy-expandable">Read More</button>
                     </div>
                 </div>
 
                 <div class="bg-gray-700 text-gray-200 p-8 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="200">
-                     <img src="https://placehold.co/100x100/10b981/000?text=Execute" alt="Execution Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
+                    <img src="https://placehold.co/100x100/10b981/000?text=Execute" alt="Project Implementation Services Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
                     <h3 class="text-2xl font-semibold text-green-500 mb-4">Project Implementation & Execution</h3>
-                     <div class="service-content">
+                    <div class="service-content">
                         <p class="text-gray-300 leading-relaxed mb-4">
-                           Offering comprehensive Project Execution services. [cite: 2]
+                            Comprehensive Project Execution services from planning to handover. [cite: 29]
                         </p>
-                        <div class="expandable-content">
+                        <div class="expandable-content" id="execution-expandable">
                             <p class="text-gray-300 leading-relaxed mb-4">
-                                This includes Detailed Engineering (Electrical SLD, Component selection, 2D/3D modelling, Shading analysis, Generation forecasting), Vendor Management, Site Management (Supervision, Inspection, Quality Control, Safety), and Supply Chain Management. [cite: 5, 7, 8, 9, 10, 11]
+                                This includes Detailed Engineering (Electrical SLD, Component selection, 2D/3D modelling, Shading analysis, Generation forecasting)[cite: 34], Vendor Management, Site Management (Supervision, Inspection, Quality Control, Safety)[cite: 32, 38], and Supply Chain Management[cite: 32].
                             </p>
-                             <p class="text-gray-300 leading-relaxed">
-                                We handle everything from detailed bill of material and construction drawings to site survey and soil testing, ensuring end-to-end support. [cite: 7, 8]
+                            <p class="text-gray-300 leading-relaxed">
+                                We handle everything from detailed bill of material and construction drawings (Mechanical, Electrical, Civil) to site survey and soil testing, ensuring end-to-end support. [cite: 34, 36]
                             </p>
                         </div>
-                         <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                        <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out" aria-expanded="false" aria-controls="execution-expandable">Read More</button>
                     </div>
                 </div>
 
                 <div class="bg-gray-700 text-gray-200 p-8 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="300">
-                     <img src="https://placehold.co/100x100/3b82f6/000?text=Infra" alt="Infrastructure Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
+                    <img src="https://placehold.co/100x100/3b82f6/000?text=Infra" alt="Electrical and Infrastructure Works Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
                     <h3 class="text-2xl font-semibold text-blue-500 mb-4">Electrical Contractor & Infra Work</h3>
-                     <div class="service-content">
+                    <div class="service-content">
                         <p class="text-gray-300 leading-relaxed mb-4">
-                            Expertise in Electrical Contractor and Infra Work. [cite: 2]
+                            Expertise in Electrical Contracting and Infrastructure development. [cite: 29]
                         </p>
-                        <div class="expandable-content">
+                        <div class="expandable-content" id="infra-expandable">
                             <p class="text-gray-300 leading-relaxed mb-4">
-                                We hold a Government Electrical Contractor Licensee [cite: 3] and have experience in LT/HT Infra & Line Shifting Work. [cite: 3]
+                                We hold a Government Electrical Contractor Licensee [cite: 30] and have proven experience in LT/HT Infrastructure development & Line Shifting Work. [cite: 30]
                             </p>
-                             <p class="text-gray-300 leading-relaxed">
-                                Our services include Smart Meter Installation & O&M, and Land Levelling & Filling Work. [cite: 3]
+                            <p class="text-gray-300 leading-relaxed">
+                                Our services extend to Smart Meter Installation & O&M, and Land Levelling & Filling Work, ensuring robust and reliable infrastructure. [cite: 30]
                             </p>
                         </div>
-                         <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                        <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out" aria-expanded="false" aria-controls="infra-expandable">Read More</button>
                     </div>
                 </div>
 
-                <div class="bg-gray-700 text-gray-200 p-8 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="400">
-                     <img src="https://placehold.co/100x100/a78bfa/000?text=EV" alt="EV Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
+                <div class="bg-gray-700 text-gray-200 p-8 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="100"> <img src="https://placehold.co/100x100/a78bfa/000?text=EV" alt="EV Consultancy and Infrastructure Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
                     <h3 class="text-2xl font-semibold text-purple-400 mb-4">EV Consultancy & Infrastructure</h3>
                     <div class="service-content">
                         <p class="text-gray-300 leading-relaxed mb-4">
-                            Specializing in consultancy services for the Electric Vehicle (EV) industry. [cite: 14]
+                            Specializing in consultancy for EV charging infrastructure, battery swapping, fleet management, and OEMs. [cite: 1]
                         </p>
-                        <div class="expandable-content">
+                        <div class="expandable-content" id="ev-expandable">
                             <p class="text-gray-300 leading-relaxed mb-4">
-                                We provide consultancy for EV charging infrastructure, battery swapping solutions, fleet management, and OEMs. [cite: 14]
+                                Our services include strategic project planning, assessment of challenges, and management consultancy tailored for the EV sector. [cite: 4] We guide you through market expansion, revenue diversification, and partnership opportunities. [cite: 7]
                             </p>
-                             <p class="text-gray-300 leading-relaxed">
-                                Our services include Charger Installation Services, Procurement Assistance, Electric Connection Management, and Regulatory Guidance including Subsidy Navigation and Tender Management Support. [cite: 28, 29, 30, 35, 36]
+                            <p class="text-gray-300 leading-relaxed">
+                                We also provide Charger Installation Services[cite: 23], Procurement Assistance[cite: 23], Electric Connection Management[cite: 22], and Regulatory Guidance including Subsidy Navigation and Tender Management Support. [cite: 14, 16, 17]
                             </p>
                         </div>
-                         <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                        <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out" aria-expanded="false" aria-controls="ev-expandable">Read More</button>
                     </div>
                 </div>
 
-                 <div class="bg-gray-700 text-gray-200 p-8 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="500">
-                     <img src="https://placehold.co/100x100/facc15/000?text=Solar" alt="Solar Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
+                <div class="bg-gray-700 text-gray-200 p-8 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="200"> <img src="https://placehold.co/100x100/facc15/000?text=Solar" alt="Solar Power Projects Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
                     <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Solar Projects (Ground & Rooftop)</h3>
-                     <div class="service-content">
+                    <div class="service-content">
                         <p class="text-gray-300 leading-relaxed mb-4">
-                           Experienced in Ground Mounted & Roof Top Solar Projects. [cite: 3]
+                            Experienced in developing and executing Ground Mounted & Roof Top Solar Projects. [cite: 30]
                         </p>
-                        <div class="expandable-content">
+                        <div class="expandable-content" id="solar-expandable">
                             <p class="text-gray-300 leading-relaxed mb-4">
-                                We handle project methodology including Bill of material, Generation forecasting, Shading analysis, 2D/3D Modelling, Electrical single line diagram, and Cost analysis & Risk assessment. [cite: 6]
+                                We employ a detailed project methodology including Bill of Material finalization, Generation forecasting, Shading analysis, 2D/3D Modelling, Electrical Single Line Diagram (SLD) creation, and comprehensive Cost Analysis & Risk Assessment. [cite: 33]
                             </p>
-                             <p class="text-gray-300 leading-relaxed">
-                                Our detailed engineering supports project design and execution. [cite: 7]
+                            <p class="text-gray-300 leading-relaxed">
+                                Our detailed engineering support covers all project phases, ensuring optimal design and efficient execution for maximum energy yield. [cite: 34]
                             </p>
                         </div>
-                         <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                        <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out" aria-expanded="false" aria-controls="solar-expandable">Read More</button>
                     </div>
                 </div>
 
-                <div class="bg-gray-700 text-gray-200 p-8 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="600">
-                     <img src="https://placehold.co/100x100/065f46/000?text=O%26M" alt="O&M Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
+                <div class="bg-gray-700 text-gray-200 p-8 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="300"> <img src="https://placehold.co/100x100/065f46/000?text=O%26M" alt="Operations and Maintenance Services Icon" class="mx-auto mb-6 w-16 h-16 object-contain">
                     <h3 class="text-2xl font-semibold text-green-700 mb-4">Operations & Maintenance (O&M)</h3>
-                     <div class="service-content">
+                    <div class="service-content">
                         <p class="text-gray-300 leading-relaxed mb-4">
-                           Providing reliable Operations & Maintenance services. [cite: 3]
+                            Providing reliable and efficient Operations & Maintenance services for diverse infrastructure projects.
                         </p>
-                        <div class="expandable-content">
+                        <div class="expandable-content" id="om-expandable">
                             <p class="text-gray-300 leading-relaxed mb-4">
-                                We are experienced in installing & Maintaining More than 4 Lakh LED Street Lights for Government of India PSU. [cite: 3]
+                                We have a proven track record, including installing & maintaining more than 4 Lakh LED Street Lights for a Government of India PSU. [cite: 30]
                             </p>
-                             <p class="text-gray-300 leading-relaxed">
-                                Our O&M services also cover Smart Meter installations and other electrical and smart infrastructure projects. [cite: 3]
+                            <p class="text-gray-300 leading-relaxed">
+                                Our O&M expertise also covers Smart Meter installations [cite: 30] and extends to other electrical and smart infrastructure projects, ensuring longevity and optimal performance.
                             </p>
                         </div>
-                         <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                        <button class="read-more-button text-green-400 hover:text-green-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out" aria-expanded="false" aria-controls="om-expandable">Read More</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-     <section class="bg-gray-900 text-gray-200 section-padding">
+    <section class="bg-gray-900 text-gray-200 section-padding">
         <div class="container mx-auto text-center">
-             <h2 class="text-4xl md:text-5xl font-bold text-green-500 mb-12" data-aos="fade-down">Why Partner with SVMC Energy?</h2>
-             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                 <div class="p-8 rounded-lg shadow-lg bg-gray-800 card" data-aos="fade-up" data-aos-delay="100">
-                      <img src="https://placehold.co/80x80/2563eb/fff?text=Skill" alt="Skilled Team Icon" class="mx-auto mb-4 w-14 h-14 object-contain">
-                     <h3 class="text-2xl font-semibold text-blue-500 mb-3">Highly Skilled Team</h3>
-                     <div class="why-choose-us-content">
-                        <p class="text-gray-300 mb-4">Comprising IITs/IIMs alumni with extensive experience. [cite: 2]</p>
-                         <div class="expandable-content">
-                             <p class="text-gray-300">Our team has rich experience of more than 25 Years in the services we offer. [cite: 2]</p>
-                         </div>
-                        <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+            <h2 class="text-4xl md:text-5xl font-bold text-green-500 mb-12" data-aos="fade-down">Why Partner with SVMC Energy?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="p-8 rounded-lg shadow-lg bg-gray-800 card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://placehold.co/80x80/2563eb/fff?text=Team" alt="Highly Skilled Team Icon" class="mx-auto mb-4 w-14 h-14 object-contain">
+                    <h3 class="text-2xl font-semibold text-blue-500 mb-3">Highly Skilled Team</h3>
+                    <div class="why-choose-us-content">
+                        <p class="text-gray-300 mb-4">Our team comprises IITs/IIMs alumni with over 25 years of rich experience in our specialized services. [cite: 29]</p>
+                        <div class="expandable-content" id="team-expandable">
+                            <p class="text-gray-300">This deep expertise allows us to tackle complex challenges and deliver innovative solutions tailored to client needs.</p>
+                        </div>
+                        <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out" aria-expanded="false" aria-controls="team-expandable">Read More</button>
                     </div>
-                 </div>
+                </div>
 
-                 <div class="p-8 rounded-lg shadow-lg bg-gray-800 card" data-aos="fade-up" data-aos-delay="200">
-                     <img src="https://placehold.co/80x80/10b981/fff?text=Tech" alt="Technology Icon" class="mx-auto mb-4 w-14 h-14 object-contain">
-                    <h3 class="text-2xl font-semibold text-green-500 mb-3">Cutting Edge Technology</h3>
+                <div class="p-8 rounded-lg shadow-lg bg-gray-800 card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://placehold.co/80x80/10b981/fff?text=Tech" alt="Cutting-Edge Technology Icon" class="mx-auto mb-4 w-14 h-14 object-contain">
+                    <h3 class="text-2xl font-semibold text-green-500 mb-3">Cutting-Edge Technology & Customized Design</h3>
                      <div class="why-choose-us-content">
-                        <p class="text-gray-300 mb-4">Utilizing the latest advancements for optimized projects. [cite: 4]</p>
-                         <div class="expandable-content">
-                             <p class="text-gray-300">We adopt methodologies like Analyze, Design, Optimize, Prioritize (ADOPT) to develop fully customized designs. [cite: 6] Our approach ensures projects are optimized for design, execution, durability, and operations. [cite: 8]</p>
-                         </div>
-                        <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                        <p class="text-gray-300 mb-4">We utilize the latest advancements and our "ADOPT" methodology (Analyze, Design, Optimize, Prioritize) to develop fully customized designs. [cite: 31, 33]</p>
+                        <div class="expandable-content" id="tech-expandable">
+                           <p class="text-gray-300">This ensures projects are optimized for design, execution, durability, and operations, delivering state-of-the-art solutions. [cite: 35]</p>
+                        </div>
+                        <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out" aria-expanded="false" aria-controls="tech-expandable">Read More</button>
                     </div>
                 </div>
 
                 <div class="p-8 rounded-lg shadow-lg bg-gray-800 card" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://placehold.co/80x80/f59e0b/fff?text=Value" alt="Value Icon" class="mx-auto mb-4 w-14 h-14 object-contain">
-                    <h3 class="text-2xl font-semibold text-orange-500 mb-3">Higher Value for Money</h3>
+                     <img src="https://placehold.co/80x80/f59e0b/fff?text=Value" alt="Value for Money Icon" class="mx-auto mb-4 w-14 h-14 object-contain">
+                    <h3 class="text-2xl font-semibold text-orange-500 mb-3">End-to-End Support & Higher Value</h3>
                     <div class="why-choose-us-content">
-                        <p class="text-gray-300 mb-4">Delivering higher value through optimized project costs and customized designs. [cite: 4, 8]</p>
-                         <div class="expandable-content">
-                             <p class="text-gray-300">We believe in partnership, staying with clients from inception to handover to ensure cost-effectiveness and value creation throughout the project lifecycle. [cite: 8, 9]</p>
-                         </div>
-                        <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                        <p class="text-gray-300 mb-4">We provide complete end-to-end support, ensuring optimized project costs and delivering higher value for money. [cite: 31, 35]</p>
+                        <div class="expandable-content" id="value-expandable">
+                             <p class="text-gray-300">As a "Partner to Project," we stay with our clients from inception to handover, fostering a collaborative approach to achieve project success and cost-effectiveness. [cite: 36]</p>
+                        </div>
+                        <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out" aria-expanded="false" aria-controls="value-expandable">Read More</button>
                     </div>
                 </div>
-             </div>
+            </div>
         </div>
-     </section>
-
+    </section>
 
     <section id="projects" class="bg-gray-800 text-gray-200 section-padding bg-pattern">
         <div class="container mx-auto text-center">
@@ -321,62 +307,63 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
                 <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden card" data-aos="zoom-in-up" data-aos-delay="100">
-                    <img src="https://placehold.co/600x400/1f2937/9ca3af?text=LED+Street+Lights" alt="LED Street Lights Project" class="w-full h-60 object-cover object-center">
+                    <img src="https://placehold.co/600x400/1f2937/9ca3af?text=LED+Street+Lights" alt="LED Street Light Installation Project" class="w-full h-60 object-cover object-center">
                     <div class="p-6 text-left">
                         <h3 class="text-2xl font-semibold text-green-500 mb-2">LED Street Light Installation</h3>
                         <div class="project-content">
-                            <p class="text-gray-300 leading-relaxed mb-4">Installation & Maintenance of over 4 Lakh LED Street Lights. [cite: 3]</p>
-                            <div class="expandable-content">
-                                <p class="text-gray-300 leading-relaxed">Completed for a Government of India PSU. [cite: 3] This project highlights our capability in large-scale public infrastructure implementation and maintenance.</p>
+                            <p class="text-gray-300 leading-relaxed mb-4">Successfully installed & currently maintaining over 4 Lakh LED Street Lights for a Government of India PSU. [cite: 30]</p>
+                            <div class="expandable-content" id="led-expandable">
+                                <p class="text-gray-300 leading-relaxed">This large-scale project underscores our capability in public infrastructure implementation, O&M, and working with government bodies across multiple states like Maharashtra, UP, MP, and Bihar. [cite: 30]</p>
                             </div>
-                             <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                            <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out" aria-expanded="false" aria-controls="led-expandable">Read More</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden card" data-aos="zoom-in-up" data-aos-delay="200">
-                    <img src="https://placehold.co/600x400/1f2937/9ca3af?text=Solar+Project" alt="Solar Project" class="w-full h-60 object-cover object-center">
-                     <div class="p-6 text-left">
+                    <img src="https://placehold.co/600x400/1f2937/9ca3af?text=Solar+Projects" alt="Ground Mounted and Rooftop Solar Projects" class="w-full h-60 object-cover object-center">
+                    <div class="p-6 text-left">
                         <h3 class="text-2xl font-semibold text-orange-500 mb-2">Ground Mounted & Rooftop Solar</h3>
-                         <div class="project-content">
-                            <p class="text-gray-300 leading-relaxed mb-4">Experience in developing Ground Mounted & Roof Top Solar Projects. [cite: 3]</p>
-                            <div class="expandable-content">
-                                <p class="text-gray-300 leading-relaxed">We handle all aspects from design and engineering (2D/3D modelling, shading analysis, generation forecasting) to execution and site management for solar installations. [cite: 6, 7]</p>
+                        <div class="project-content">
+                            <p class="text-gray-300 leading-relaxed mb-4">Extensive experience in developing and executing both Ground Mounted and Roof Top Solar Power Projects. [cite: 30]</p>
+                             <div class="expandable-content" id="solarproject-expandable">
+                                <p class="text-gray-300 leading-relaxed">We manage all project aspects from detailed site surveys, soil testing, and design engineering (including 2D/3D modelling, shading analysis, generation forecasting [cite: 33, 34]) to procurement, installation, and commissioning of solar farms and rooftop installations. (Examples of our work include Asbestos Rooftop, Transmission Bay, Auxiliary Supply, Transformer Yard, Control Room setups for solar projects [cite: 39])</p>
                             </div>
-                             <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                            <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out" aria-expanded="false" aria-controls="solarproject-expandable">Read More</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden card" data-aos="zoom-in-up" data-aos-delay="300">
-                    <img src="https://placehold.co/600x400/1f2937/9ca3af?text=Smart+Meter" alt="Smart Meter Project" class="w-full h-60 object-cover object-center">
-                     <div class="p-6 text-left">
+                    <img src="https://placehold.co/600x400/1f2937/9ca3af?text=Smart+Metering" alt="Smart Meter Installation and O&M Project" class="w-full h-60 object-cover object-center">
+                    <div class="p-6 text-left">
                         <h3 class="text-2xl font-semibold text-blue-500 mb-2">Smart Meter Installation & O&M</h3>
                         <div class="project-content">
-                            <p class="text-gray-300 leading-relaxed mb-4">Expertise in Smart Meter Installation & O&M. [cite: 3]</p>
-                            <div class="expandable-content">
-                                <p class="text-gray-300 leading-relaxed">We manage the full lifecycle of smart meter projects, ensuring efficient installation and reliable ongoing operations and maintenance.</p>
+                            <p class="text-gray-300 leading-relaxed mb-4">Expertise in the deployment and ongoing Operations & Maintenance of Smart Metering infrastructure. [cite: 30]</p>
+                            <div class="expandable-content" id="smartmeter-expandable">
+                                <p class="text-gray-300 leading-relaxed">We manage the full lifecycle of smart meter projects, ensuring efficient installation, seamless integration, and reliable ongoing operations and maintenance for utility providers and consumers.</p>
                             </div>
-                             <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out">Read More</button>
+                            <button class="read-more-button text-orange-400 hover:text-orange-300 hover:underline focus:outline-none text-sm mt-4 transition duration-300 ease-in-out" aria-expanded="false" aria-controls="smartmeter-expandable">Read More</button>
                         </div>
                     </div>
                 </div>
-                </div>
-             <div class="mt-14" data-aos="fade-up">
-                 <a href="#" class="inline-block bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-10 rounded-full text-lg shadow-xl transform hover:scale-105 transition duration-300 ease-in-out border-2 border-green-600 hover:border-green-500">
+            </div>
+            <div class="mt-14" data-aos="fade-up">
+                <a href="#" class="inline-block bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-10 rounded-full text-lg shadow-xl transform hover:scale-105 transition duration-300 ease-in-out border-2 border-green-600 hover:border-green-500">
                     View More Projects
-                 </a>
-             </div>
+                </a>
+            </div>
         </div>
     </section>
 
     <section id="contact" class="bg-green-700 text-white section-padding bg-pattern">
         <div class="container mx-auto text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-12" data-aos="fade-down">Connect with SVMC Energy</h2>
-            <p class="text-xl mb-8" data-aos="fade-up">Let's discuss your energy and smart infrastructure project needs.</p>
+            <p class="text-xl mb-8" data-aos="fade-up">Let's discuss your energy and smart infrastructure project needs. We are here to provide tailored solutions.</p>
             <div class="flex justify-center">
                 <div class="w-full max-w-2xl bg-gray-800 text-gray-200 p-8 md:p-10 rounded-lg shadow-lg" data-aos="zoom-in-up" data-aos-delay="200">
-                    <form action="YOUR_FORM_SUBMISSION_URL" method="POST"> <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <form action="YOUR_FORM_SUBMISSION_URL" method="POST">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                             <div data-aos="fade-right" data-aos-delay="300">
                                 <label for="name" class="block text-gray-400 text-sm font-semibold mb-2 text-left">Name:</label>
                                 <input type="text" id="name" name="name" class="shadow-sm appearance-none border border-gray-700 bg-gray-900 rounded w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
@@ -386,7 +373,7 @@
                                 <input type="email" id="email" name="email" class="shadow-sm appearance-none border border-gray-700 bg-gray-900 rounded w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
                             </div>
                         </div>
-                         <div class="mb-6 text-left" data-aos="fade-up" data-aos-delay="400">
+                        <div class="mb-6 text-left" data-aos="fade-up" data-aos-delay="400">
                             <label for="subject" class="block text-gray-400 text-sm font-semibold mb-2">Subject:</label>
                             <input type="text" id="subject" name="subject" class="shadow-sm appearance-none border border-gray-700 bg-gray-900 rounded w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                         </div>
@@ -400,9 +387,9 @@
                             </button>
                         </div>
                     </form>
-                     <div class="mt-10 text-gray-300 text-left border-t pt-8 border-gray-700" data-aos="fade-up" data-aos-delay="700">
+                    <div class="mt-10 text-gray-300 text-left border-t pt-8 border-gray-700" data-aos="fade-up" data-aos-delay="700">
                         <h3 class="text-2xl font-semibold text-blue-500 mb-4">Contact Information</h3>
-                        <p class="mb-3"><strong class="text-green-500">Email:</strong> <a href="mailto:svmc.groups@gmail.com" class="text-blue-400 hover:underline">svmc.groups@gmail.com</a> [cite: 13]</p>
+                        <p class="mb-3"><strong class="text-green-500">Email:</strong> <a href="mailto:svmc.groups@gmail.com" class="text-blue-400 hover:underline">svmc.groups@gmail.com</a> [cite: 40]</p>
                         <p class="mb-3"><strong class="text-green-500">Phone:</strong> <a href="tel:+[Your Phone Number]" class="text-blue-400 hover:underline">[Your Phone Number]</a></p>
                         <p><strong class="text-green-500">Address:</strong> [Your Business Address]</p>
                     </div>
@@ -413,7 +400,7 @@
 
     <footer class="bg-gray-950 text-gray-400 p-8 text-center">
         <div class="container mx-auto">
-            <p>&copy; 2023 SVMC Energy & Smart Infra Pvt Ltd. All rights reserved.</p>
+            <p>&copy; <span id="currentYear">2025</span> SVMC Energy & Smart Infra Pvt Ltd. All rights reserved.</p>
             <p class="mt-4 text-sm">Crafted with <span class="text-red-500">&hearts;</span> using Tailwind CSS & AOS</p>
         </div>
     </footer>
@@ -421,42 +408,46 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1200, // Animation duration in ms
-            once: true, // Whether animation should happen only once - while scrolling down
-            easing: 'ease-in-out', // Easing function
-            delay: 100, // Default delay
+            duration: 800, // Adjusted default animation duration
+            once: true,
+            easing: 'ease-in-out',
+            delay: 100,
         });
 
-        // Simple JS for Mobile Menu Toggle
-        const button = document.getElementById('mobile-menu-button');
-        const menu = document.getElementById('mobile-menu');
-        button.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
+        // Mobile Menu Toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuButton.addEventListener('click', () => {
+            const isExpanded = mobileMenu.classList.toggle('hidden');
+            menuButton.setAttribute('aria-expanded', !isExpanded);
         });
-         // Close menu when a link is clicked
-        menu.querySelectorAll('a').forEach(link => {
+        mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                menu.classList.add('hidden'); // Hide menu after clicking
+                mobileMenu.classList.add('hidden');
+                menuButton.setAttribute('aria-expanded', 'false');
             });
         });
 
-        // JavaScript for Read More/Read Less Toggle
+        // Read More/Read Less Toggle
         document.querySelectorAll('.read-more-button').forEach(button => {
             button.addEventListener('click', () => {
-                const parentContainer = button.parentElement; // Get the parent div (e.g., .about-content, .service-content)
-                const expandableContent = parentContainer.querySelector('.expandable-content'); // Find the expandable content within that parent
-
-                if (expandableContent) { // Check if expandable content exists
-                     expandableContent.classList.toggle('expanded-content');
-
-                     if (expandableContent.classList.contains('expanded-content')) {
-                         button.textContent = 'Read Less';
-                     } else {
-                         button.textContent = 'Read More';
-                     }
+                const parentContainer = button.parentElement;
+                const expandableContent = parentContainer.querySelector('.expandable-content');
+                if (expandableContent) {
+                    expandableContent.classList.toggle('expanded-content');
+                    const isExpanded = expandableContent.classList.contains('expanded-content');
+                    button.setAttribute('aria-expanded', isExpanded);
+                    if (isExpanded) {
+                        button.textContent = 'Read Less';
+                    } else {
+                        button.textContent = 'Read More';
+                    }
                 }
             });
         });
+
+        // Update Copyright Year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 
 </body>
