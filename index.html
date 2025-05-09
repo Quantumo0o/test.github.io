@@ -28,6 +28,13 @@
             transform: translateY(-8px);
             box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
         }
+        .title-gradient-text {
+        background: linear-gradient(45deg, #f59e0b, #10b981, #2563eb); /* Orange, Green, Blue */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        }
 
         .gradient-text {
             background: linear-gradient(45deg, #065f46, #10b981, #2563eb, #3b82f6, #f59e0b, #fbbf24);
@@ -67,18 +74,54 @@
         .hidden-project {
             display: none;
         }
+        @keyframes marquee {
+            from {
+                transform: translateX(0); /* Start at original position */
+            }
+            to {
+                /*
+                Translate left by 50% of the *container's* width.
+                Since the container has two identical sets of logos (A + A),
+                translating by 50% of the total width moves by the width of one set (A),
+                making the second set perfectly align where the first set started.
+                */
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Apply the animation */
+        .animate-marquee {
+            /* Ensure the container is wide enough to hold both sets and maybe more for the initial view */
+            /* This might require adjusting the parent container's width or using flex properties */
+            width: max-content; /* Allow flex container to be wider than its parent */
+            display: flex; /* Already there */
+            align-items: center; /* Already there */
+            gap: 2rem; /* Replacing space-x-8 (32px). Using gap might be more reliable */
+
+            animation: marquee 15s linear infinite; /* Adjust duration (15s) and timing-function (linear) as needed */
+
+            /* Optional: Add translate3d for potential hardware acceleration and smoother rendering */
+            transform: translate3d(0, 0, 0);
+        }
+
+        /* If you keep space-x-8 instead of gap, make sure it's applied correctly */
+        /* .animate-marquee > * { margin-right: 2rem; } */
+        /* .animate-marquee > *:last-child { margin-right: 0; } */
     </style>
 </head>
 <body class="font-sans bg-gray-100 text-gray-900">
     <header class="bg-white p-4 text-gray-900 sticky top-0 z-50 shadow-md bg-opacity-90 backdrop-filter backdrop-blur-md">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-green-500">SVMC <span class="text-blue-400">Energy</span></a>
+            <a href="#home" class="text-2xl font-bold title-gradient-text flex items-center">
+                <img src="logo.png" alt="SVMC Logo" class="w-12 h-12 mr-1">
+                <span>SVMC Energy & Smart Infra</span>
+            </a>
             <div class="space-x-6 hidden md:flex items-center text-lg">
-                <a href="#home" class="hover:text-green-600 transition duration-300 ease-in-out">Home</a>
-                <a href="#about" class="hover:text-green-600 transition duration-300 ease-in-out">About Us</a>
-                <a href="#services" class="hover:text-green-600 transition duration-300 ease-in-out">Services</a>
-                <a href="#projects" class="hover:text-green-600 transition duration-300 ease-in-out">Projects</a>
-                <a href="#contact" class="hover:text-green-600 transition duration-300 ease-in-out">Contact</a>
+                <a href="#home" class="hover:text-green-600 transition duration-300 ease-in-out"><b>Home</b></a>
+                <a href="#about" class="hover:text-green-600 transition duration-300 ease-in-out"><b><About Us></b></a>
+                <a href="#services" class="hover:text-green-600 transition duration-300 ease-in-out"><b>Services</b></a>
+                <a href="#projects" class="hover:text-green-600 transition duration-300 ease-in-out"><b>Projects</b></a>
+                <a href="#contact" class="hover:text-green-600 transition duration-300 ease-in-out"><b>Contact</b></a>
             </div>
             <button id="mobile-menu-button" class="md:hidden focus:outline-none text-gray-700 hover:text-green-600 transition duration-300 ease-in-out" aria-expanded="false" aria-controls="mobile-menu">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -101,7 +144,7 @@
         <div class="absolute inset-0 bg-white opacity-0"></div>
         <div class="container mx-auto text-center z-10">
             <h1 class="text-3xl md:text-4xl font-extrabold mb-6 leading-tight drop-shadow-lg gradient-text" data-aos="zoom-in" data-aos-duration="1000">
-                SVMC Energy & Smart Infra Pvt Ltd delivers cutting-edge in various sectors like Solar, EV charging Infra, Smart Meter, LED Lighting, Energy efficiency, Consultancy, Govt. Projects & Liaisoning.
+                SVMC Energy & Smart Infra Pvt Ltd delivers cutting-edge in various sectors like Solar, EV charging Infra, Smart Meter, LED Lighting, Energy efficiency, Consultancy, Govt. Projects & Liaisoning. 
             </h1>
             <p class="text-xl md:text-2xl mb-10 max-w-4xl mx-auto drop-shadow text-gray-700" data-aos="fade-up" data-aos-delay="200">
             </p>
@@ -386,6 +429,39 @@
         </div>
     </section>
 
+    <section id="clients" class="bg-gray-100 py-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-blue-500 mb-6">Our Clients</h2>
+            <div class="overflow-hidden relative">
+                <div class="flex items-center space-x-8 animate-marquee">
+                    <img src="ashok.png" alt="Client 1 Logo" class="h-16 w-auto">
+                    <img src="ATEL.jpg" alt="Client 2 Logo" class="h-16 w-auto">
+                    <img src="genus.png" alt="Client 3 Logo" class="h-16 w-auto">
+                    <img src="gmr.png" alt="Client 4 Logo" class="h-16 w-auto">
+                    <img src="gwalior.png" alt="Client 5 Logo" class="h-16 w-auto">
+                    <img src="jio.jpg" alt="Client 6 Logo" class="h-16 w-auto">
+                    <img src="liumgo.png" alt="Client 6 Logo" class="h-16 w-auto">
+                    <img src="NCC.png" alt="Client 6 Logo" class="h-16 w-auto">
+                    <img src="NY.png" alt="Client 6 Logo" class="h-16 w-auto">
+                    <img src="solarcapital.jpg" alt="Client 6 Logo" class="h-16 w-auto">
+                    <img src="UPNEDA.png" alt="Client 6 Logo" class="h-16 w-auto">
+                    <!-- Repeat logos for seamless scrolling -->
+                    <img src="ashok.png" alt="Client 1 Logo" class="h-16 w-auto">
+                    <img src="ATEL.jpg" alt="Client 2 Logo" class="h-16 w-auto">
+                    <img src="genus.png" alt="Client 3 Logo" class="h-16 w-auto">
+                    <img src="gmr.png" alt="Client 4 Logo" class="h-16 w-auto">
+                    <img src="gwalior.png" alt="Client 5 Logo" class="h-16 w-auto">
+                    <img src="jio.jpg" alt="Client 6 Logo" class="h-16 w-auto">
+                    <img src="liumgo.png" alt="Client 6 Logo" class="h-16 w-auto">
+                    <img src="NCC.png" alt="Client 6 Logo" class="h-16 w-auto">
+                    <img src="NY.png" alt="Client 6 Logo" class="h-16 w-auto">
+                    <img src="solarcapital.jpg" alt="Client 6 Logo" class="h-16 w-auto">
+                    <img src="UPNEDA.png" alt="Client 6 Logo" class="h-16 w-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="text-white section-padding bg-pattern" style="background: linear-gradient(45deg, #2563eb, #10b981, #f59e0b);">
         <div class="container mx-auto text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-12" data-aos="fade-down">Connect with SVMC Energy</h2>
@@ -394,8 +470,9 @@
                 <div class="w-full max-w-2xl bg-gray-800 text-gray-200 p-8 md:p-10 rounded-lg shadow-lg" data-aos="zoom-in-up" data-aos-delay="200">
                     <div class="text-gray-300 text-left border-gray-700" data-aos="fade-up" data-aos-delay="700">
                         <h3 class="text-2xl font-semibold text-blue-500 mb-4">Contact Information</h3>
-                        <p class="mb-3"><strong class="text-green-500">Email:</strong> <a href="mailto:svmc.projects@gmail.com" class="text-blue-400 hover:underline">svmc.projects@gmail.com</a> </p>
-                        <p><strong class="text-green-500">Address:</strong> B-24 and 25, J Block, Sector-1, Noida , UP - 201301</p>
+                        <p class="mb-3"><strong class="text-green-500">Email:</strong> <a href="mailto:svmc.groups@gmail.com" class="text-blue-400 hover:underline">svmc.groups@gmail.com</a> [cite: 40]</p>
+                        <p class="mb-3"><strong class="text-green-500">Phone:</strong> <a href="tel:+[Your Phone Number]" class="text-blue-400 hover:underline">[Your Phone Number]</a></p>
+                        <p><strong class="text-green-500">Address:</strong> [Your Business Address]</p>
                     </div>
                 </div>
             </div>
